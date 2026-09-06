@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cadence — Running &amp; Cycling Journal</title>
+<meta name="description" content="Training notes, route guides and honest gear reviews for runners and cyclists.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1&family=Inter:wght@300..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/home.css">
+</head>
+<body>
+
+<!-- ═══ Announcement ═══ -->
+<div class="ann">
+  New: the <strong>Sub-4 Marathon Plan</strong> is live for members —
+  <a href="#plans">see the plans</a>
+</div>
+
+<!-- ═══ Header ═══ -->
+<header class="site-head">
+  <div class="shell site-head__inner">
+    <a class="brand" href="index.html" aria-label="Cadence home">
+      <span class="brand__mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#d7fd8c" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="6" cy="18" r="3.2"/><circle cx="18" cy="18" r="3.2"/>
+          <path d="M6 18 10.5 8h4"/><path d="M14 8l4 10"/><path d="M9 8h5"/>
+        </svg>
+      </span>
+      <span class="brand__word">Cad<em>ence</em></span>
+    </a>
+
+    <nav class="nav" aria-label="Main">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="#running">Running</a>
+      <a href="#cycling">Cycling</a>
+      <a href="#plans">Training</a>
+      <a href="#gear">Gear</a>
+      <a href="article.html">Journal</a>
+    </nav>
+
+    <div class="head-actions">
+      <button class="icon-btn" aria-label="Search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+          <circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/>
+        </svg>
+      </button>
+      <button class="icon-btn menu-btn" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+          <path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/>
+        </svg>
+      </button>
+      <a class="head-signin" href="#">Sign in</a>
+      <a class="btn btn--primary btn--sm" href="#subscribe">Subscribe</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- ═══ Hero ═══ -->
+<section class="shell hero">
+  <div class="hero__grid">
+
+    <article class="feature">
+      <div class="feature__media">
+        <img src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=1400&amp;h=875&amp;fit=crop&amp;q=80" alt="Three runners silhouetted against a blue dawn sky on an empty road">
+        <span class="tag-on-img tag-on-img--accent">Training</span>
+      </div>
+      <div class="feature__body">
+        <span class="eyebrow">Featured this week</span>
+        <h1 class="feature__title"><a href="article.html">The 5AM Argument: Why Easy Runs Should Feel Boring</a></h1>
+        <p class="feature__dek">Eight weeks of running slower than felt reasonable — and the 4:12 half marathon that came out the other side. Here's the heart-rate data, the doubts, and what I'd do differently.</p>
+        <div class="feature__foot">
+          <div class="meta">
+            <img class="meta__avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&amp;h=80&amp;fit=crop" alt="">
+            <span class="meta__name">Mara Ellison</span>
+            <span class="meta__dot"></span>
+            <span>8 min read</span>
+            <span class="meta__dot"></span>
+            <span>Mar 4, 2026</span>
+          </div>
+          <span class="stat-inline">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 17l5-7 4 4 4-6 5 5"/></svg>
+            21.1 km · 4:12:00
+          </span>
+        </div>
+      </div>
+    </article>
+
+    <aside class="latest">
+      <div class="latest__head">
+        <span class="eyebrow eyebrow--bare eyebrow--muted">Latest posts</span>
+        <a class="sec-head__link" href="#">Archive</a>
+      </div>
+      <div class="latest__list">
+        <article class="latest__item">
+          <span class="latest__num">01</span>
+          <div>
+            <h3 class="latest__title"><a href="article.html">Zwift Racing Made Me a Worse Climber</a></h3>
+            <div class="meta"><span>Cycling</span><span class="meta__dot"></span><span>6 min</span></div>
+          </div>
+        </article>
+        <article class="latest__item">
+          <span class="latest__num">02</span>
+          <div>
+            <h3 class="latest__title"><a href="article.html">Carbon Plates, Two Years On: Still Worth It?</a></h3>
+            <div class="meta"><span>Gear</span><span class="meta__dot"></span><span>9 min</span></div>
+          </div>
+        </article>
+        <article class="latest__item">
+          <span class="latest__num">03</span>
+          <div>
+            <h3 class="latest__title"><a href="article.html">A Coastal 100 km on Four Hours' Sleep</a></h3>
+            <div class="meta"><span>Routes</span><span class="meta__dot"></span><span>12 min</span></div>
+          </div>
+        </article>
+        <article class="latest__item">
+          <span class="latest__num">04</span>
+          <div>
+            <h3 class="latest__title"><a href="article.html">What 300 Runners Eat Before a Race</a></h3>
+            <div class="meta"><span>Nutrition</span><span class="meta__dot"></span><span>7 min</span></div>
+          </div>
+        </article>
+      </div>
+      <div class="latest__cta">
+        <a class="btn btn--ghost btn--sm" href="#">Browse all articles</a>
+      </div>
+    </aside>
+
+  </div>
+</section>
+<!-- ═══ Category tiles ═══ -->
+<section class="shell band--tight" id="running">
+  <div class="sec-head">
+    <div>
+      <span class="eyebrow">Explore</span>
+      <h2 class="sec-head__title">Find your lane</h2>
+      <p class="sec-head__sub">Six topics, one obsession: getting a little faster without falling apart.</p>
+    </div>
+    <a class="sec-head__link" href="#">All topics →</a>
+  </div>
+  <div class="tiles">
+    <a class="tile" href="#">
+      <img src="https://images.unsplash.com/photo-1502224562085-639556652f33?w=600&amp;h=450&amp;fit=crop&amp;q=75" alt="">
+      <span class="tile__label"><span class="tile__name">Road Running</span><span class="tile__count">48 articles</span></span>
+    </a>
+    <a class="tile" href="#">
+      <img src="https://images.unsplash.com/photo-1486218119243-13883505764c?w=600&amp;h=450&amp;fit=crop&amp;q=75" alt="">
+      <span class="tile__label"><span class="tile__name">Trail &amp; Ultra</span><span class="tile__count">31 articles</span></span>
+    </a>
+    <a class="tile" href="#">
+      <img src="https://images.unsplash.com/photo-1534787238916-9ba6764efd4f?w=600&amp;h=450&amp;fit=crop&amp;q=75" alt="">
+      <span class="tile__label"><span class="tile__name">Road Cycling</span><span class="tile__count">39 articles</span></span>
+    </a>
+    <a class="tile" href="#">
+      <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&amp;h=450&amp;fit=crop&amp;q=75" alt="">
+      <span class="tile__label"><span class="tile__name">Fuel &amp; Recovery</span><span class="tile__count">26 articles</span></span>
+    </a>
+  </div>
+</section>
+
+<!-- ═══ Stats band ═══ -->
+<section class="shell band--tight">
+  <div class="stats">
+    <div class="stat">
+      <div class="stat__num">4,820<span>km</span></div>
+      <div class="stat__label">Logged &amp; written about in 2025</div>
+    </div>
+    <div class="stat">
+      <div class="stat__num">147</div>
+      <div class="stat__label">Long-form articles published</div>
+    </div>
+    <div class="stat">
+      <div class="stat__num">61</div>
+      <div class="stat__label">Shoes and bikes tested</div>
+    </div>
+    <div class="stat">
+      <div class="stat__num">12<span>k</span></div>
+      <div class="stat__label">Runners on the Sunday letter</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ Latest grid ═══ -->
+<section class="shell band" id="cycling">
+  <div class="sec-head">
+    <div>
+      <span class="eyebrow">The journal</span>
+      <h2 class="sec-head__title">Recent writing</h2>
+    </div>
+    <a class="sec-head__link" href="#">View all →</a>
+  </div>
+
+  <div class="grid-3">
+    <article class="card">
+      <a class="card__media" href="article.html">
+        <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?w=700&amp;h=467&amp;fit=crop&amp;q=75" alt="A tight peloton of cyclists racing on an open road">
+        <span class="tag-on-img">Cycling</span>
+      </a>
+      <h3 class="card__title"><a href="article.html">Holding a Wheel at 42 km/h Without Panicking</a></h3>
+      <p class="card__dek">Group-ride etiquette nobody explains until you've already been shouted at once.</p>
+      <div class="meta">
+        <img class="meta__avatar" src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=80&amp;h=80&amp;fit=crop" alt="">
+        <span class="meta__name">Tom Reyes</span><span class="meta__dot"></span><span>6 min read</span>
+      </div>
+    </article>
+
+    <article class="card">
+      <a class="card__media" href="article.html">
+        <img src="https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=700&amp;h=467&amp;fit=crop&amp;q=75" alt="Runner&#39;s legs climbing stone steps in orange trainers">
+        <span class="tag-on-img">Training</span>
+      </a>
+      <h3 class="card__title"><a href="article.html">Hill Reps Are Speedwork in Disguise</a></h3>
+      <p class="card__dek">Six weeks of Tuesday hills, one honest look at whether the 5K time actually moved.</p>
+      <div class="meta">
+        <img class="meta__avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&amp;h=80&amp;fit=crop" alt="">
+        <span class="meta__name">Mara Ellison</span><span class="meta__dot"></span><span>7 min read</span>
+      </div>
+    </article>
+
+    <article class="card">
+      <a class="card__media" href="article.html">
+        <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=700&amp;h=467&amp;fit=crop&amp;q=75" alt="Overhead shot of a breakfast bowl with egg, avocado and greens">
+        <span class="tag-on-img">Nutrition</span>
+      </a>
+      <h3 class="card__title"><a href="article.html">The Boring Breakfast That Fixed My Long Runs</a></h3>
+      <p class="card__dek">Carbs, timing, and the unglamorous truth about gut training before race day.</p>
+      <div class="meta">
+        <img class="meta__avatar" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&amp;h=80&amp;fit=crop" alt="">
+        <span class="meta__name">Dr. Ada Nkemi</span><span class="meta__dot"></span><span>9 min read</span>
+      </div>
+    </article>
+
+    <article class="card">
+      <a class="card__media" href="article.html">
+        <img src="https://images.unsplash.com/photo-1541625602330-2277a4c46182?w=700&amp;h=467&amp;fit=crop&amp;q=75" alt="Two cyclists riding a coastal road beside dunes">
+        <span class="tag-on-img">Routes</span>
+      </a>
+      <h3 class="card__title"><a href="article.html">A 120 km Coastal Loop You Can Ride Solo</a></h3>
+      <p class="card__dek">Wind direction, three café stops, and the one climb worth saving your legs for.</p>
+      <div class="meta">
+        <img class="meta__avatar" src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=80&amp;h=80&amp;fit=crop" alt="">
+        <span class="meta__name">Tom Reyes</span><span class="meta__dot"></span><span>11 min read</span>
+      </div>
+    </article>
+
+    <article class="card">
+      <a class="card__media" href="article.html">
+        <img src="https://images.unsplash.com/photo-1571008887538-b36bb32f4571?w=700&amp;h=467&amp;fit=crop&amp;q=75" alt="Close crop of a runner mid-stride on grey asphalt">
+        <span class="tag-on-img">Injury</span>
+      </a>
+      <h3 class="card__title"><a href="article.html">Shin Splints: What Finally Worked</a></h3>
+      <p class="card__dek">Four months off, two physios, and the cadence change that mattered most.</p>
+      <div class="meta">
+        <img class="meta__avatar" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&amp;h=80&amp;fit=crop" alt="">
+        <span class="meta__name">Dr. Ada Nkemi</span><span class="meta__dot"></span><span>8 min read</span>
+      </div>
+    </article>
+
+    <article class="card">
+      <a class="card__media" href="article.html">
+        <img src="https://images.unsplash.com/photo-1533107862482-0e6974b06ec4?w=700&amp;h=467&amp;fit=crop&amp;q=75" alt="Cyclist standing with a bike on a rocky ridge above green hills">
+        <span class="tag-on-img">Adventure</span>
+      </a>
+      <h3 class="card__title"><a href="article.html">Three Days on the Ridge With One Frame Bag</a></h3>
+      <p class="card__dek">Bikepacking light enough to climb, heavy enough to sleep. The full kit list.</p>
+      <div class="meta">
+        <img class="meta__avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&amp;h=80&amp;fit=crop" alt="">
+        <span class="meta__name">Mara Ellison</span><span class="meta__dot"></span><span>10 min read</span>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ═══ Editor's pick ═══ -->
+<section class="band band--alt">
+  <div class="shell">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow">Editor's pick</span>
+        <h2 class="sec-head__title">The race report</h2>
+      </div>
+      <a class="sec-head__link" href="#">All race reports →</a>
+    </div>
+
+    <article class="pick">
+      <a class="pick__media" href="article.html">
+        <img src="https://images.unsplash.com/photo-1452626038306-9aae5e071dd3?w=800&amp;h=600&amp;fit=crop&amp;q=80" alt="Thousands of runners filling a tree-lined city avenue at the start of a marathon">
+        <span class="tag-on-img tag-on-img--accent">Race report</span>
+      </a>
+      <div>
+        <span class="eyebrow eyebrow--muted">Valencia · February 2026</span>
+        <h3 class="pick__title"><a href="article.html">Negative Split or Bust</a></h3>
+        <p class="pick__dek">I went through halfway 90 seconds slower than goal pace on purpose. Here's the second half — and the last 5 km where it nearly came apart.</p>
+        <dl class="pick__stats">
+          <div class="pick__stat"><dt>Distance</dt><dd>42.2 km</dd></div>
+          <div class="pick__stat"><dt>Finish</dt><dd>3:28:41</dd></div>
+          <div class="pick__stat"><dt>Avg pace</dt><dd>4:57 /km</dd></div>
+          <div class="pick__stat"><dt>Elevation</dt><dd>84 m</dd></div>
+        </dl>
+        <a class="btn btn--primary" href="article.html">Read the report</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ═══ Training plans ═══ -->
+<section class="shell band" id="plans">
+  <div class="sec-head">
+    <div>
+      <span class="eyebrow">Members</span>
+      <h2 class="sec-head__title">Training plans that assume you have a job</h2>
+      <p class="sec-head__sub">Four to five sessions a week, built around real schedules. Delivered weekly by email.</p>
+    </div>
+  </div>
+
+  <div class="plans">
+    <div class="plan">
+      <span class="plan__badge">Free</span>
+      <div class="plan__weeks">8 <small>weeks</small></div>
+      <h3>First 10K</h3>
+      <p class="plan__desc">Run-walk to continuous 10K without hating the process.</p>
+      <ul class="plan__list">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M4 12.5l5 5L20 6.5"/></svg>3 runs per week</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Printable weekly PDF</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Strava-ready workouts</li>
+      </ul>
+      <a class="btn btn--ghost" href="#subscribe">Start free</a>
+    </div>
+
+    <div class="plan plan--featured">
+      <span class="plan__badge">Most popular</span>
+      <div class="plan__weeks">16 <small>weeks</small></div>
+      <h3>Sub-4 Marathon</h3>
+      <p class="plan__desc">Threshold work, long runs and a taper that doesn't leave you flat.</p>
+      <ul class="plan__list">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M4 12.5l5 5L20 6.5"/></svg>5 sessions per week</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Pace &amp; heart-rate zones</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Fuelling &amp; race-week guide</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Members-only Q&amp;A thread</li>
+      </ul>
+      <a class="btn btn--onDark" href="#subscribe">Join for £6 / month</a>
+    </div>
+
+    <div class="plan">
+      <span class="plan__badge">Cycling</span>
+      <div class="plan__weeks">12 <small>weeks</small></div>
+      <h3>Century Ready</h3>
+      <p class="plan__desc">Build to 100 miles with FTP work and back-to-back weekend rides.</p>
+      <ul class="plan__list">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M4 12.5l5 5L20 6.5"/></svg>4 rides per week</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Zwift &amp; outdoor versions</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Nutrition per ride hour</li>
+      </ul>
+      <a class="btn btn--ghost" href="#subscribe">See the plan</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ Gear rail ═══ -->
+<section class="band band--warm" id="gear">
+  <div class="shell">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow">Tested, not sponsored</span>
+        <h2 class="sec-head__title">Gear we actually kept</h2>
+        <p class="sec-head__sub">Every score comes after at least 200 km. We buy what we review.</p>
+      </div>
+      <a class="sec-head__link" href="#">All reviews →</a>
+    </div>
+
+    <div class="rail">
+      <a class="gear" href="article.html">
+        <span class="gear__media"><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&amp;h=333&amp;fit=crop&amp;q=75" alt="Red running shoe on a red background"></span>
+        <span class="eyebrow eyebrow--bare eyebrow--muted">Road shoe</span>
+        <span class="gear__name">Velo Flux 4 — daily trainer</span>
+        <span class="gear__meta"><span class="gear__score">8.7 / 10</span><span class="gear__price">£135</span></span>
+      </a>
+      <a class="gear" href="article.html">
+        <span class="gear__media"><img src="https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=500&amp;h=333&amp;fit=crop&amp;q=75" alt="Silver road bicycle against a white wall"></span>
+        <span class="eyebrow eyebrow--bare eyebrow--muted">Endurance bike</span>
+        <span class="gear__name">Northline AR2 alloy build</span>
+        <span class="gear__meta"><span class="gear__score">9.1 / 10</span><span class="gear__price">£1,899</span></span>
+      </a>
+      <a class="gear" href="article.html">
+        <span class="gear__media"><img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=500&amp;h=333&amp;fit=crop&amp;q=75" alt="Pastel-coloured trainers"></span>
+        <span class="eyebrow eyebrow--bare eyebrow--muted">Recovery shoe</span>
+        <span class="gear__name">Drift Cloud — easy-day pick</span>
+        <span class="gear__meta"><span class="gear__score">7.9 / 10</span><span class="gear__price">£98</span></span>
+      </a>
+      <a class="gear" href="article.html">
+        <span class="gear__media"><img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=500&amp;h=333&amp;fit=crop&amp;q=75" alt="Athlete training in a dim gym"></span>
+        <span class="eyebrow eyebrow--bare eyebrow--muted">Strength</span>
+        <span class="gear__name">The 20-minute runner's gym kit</span>
+        <span class="gear__meta"><span class="gear__score">8.4 / 10</span><span class="gear__price">From £45</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ Newsletter ═══ -->
+<section class="shell band" id="subscribe">
+  <div class="subscribe">
+    <div class="subscribe__grid">
+      <div>
+        <span class="eyebrow eyebrow--light">The Sunday Split</span>
+        <h2>One honest email every Sunday morning.</h2>
+        <p>The week's training, what broke, what helped, and one route worth driving to. No affiliate spam — ever.</p>
+      </div>
+      <form class="subscribe__form" onsubmit="return false">
+        <div class="subscribe__row">
+          <label class="sr-only" for="nl-email">Email address</label>
+          <input id="nl-email" type="email" placeholder="you@example.com" autocomplete="email">
+          <button class="btn btn--onDark" type="submit">Subscribe</button>
+        </div>
+        <span class="subscribe__fine">Free forever. Unsubscribe in one click.</span>
+        <div class="subscribe__proof">
+          <span class="subscribe__faces">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=60&amp;h=60&amp;fit=crop" alt="">
+            <img src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=60&amp;h=60&amp;fit=crop" alt="">
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=60&amp;h=60&amp;fit=crop" alt="">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&amp;h=60&amp;fit=crop" alt="">
+          </span>
+          Joined by 12,400 runners and riders
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ Authors ═══ -->
+<section class="shell band--tight">
+  <div class="sec-head">
+    <div>
+      <span class="eyebrow">Who writes here</span>
+      <h2 class="sec-head__title">Four people, a lot of miles</h2>
+    </div>
+    <a class="sec-head__link" href="#">Meet the team →</a>
+  </div>
+  <div class="authors">
+    <a class="author" href="#">
+      <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=140&amp;h=140&amp;fit=crop" alt="">
+      <span><span class="author__name">Mara Ellison</span><br><span class="author__role">Editor · 2:58 marathon</span></span>
+    </a>
+    <a class="author" href="#">
+      <img src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=140&amp;h=140&amp;fit=crop" alt="">
+      <span><span class="author__name">Tom Reyes</span><br><span class="author__role">Cycling · ex-cat 2</span></span>
+    </a>
+    <a class="author" href="#">
+      <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=140&amp;h=140&amp;fit=crop" alt="">
+      <span><span class="author__name">Dr. Ada Nkemi</span><br><span class="author__role">Physio · sports med</span></span>
+    </a>
+    <a class="author" href="#">
+      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=140&amp;h=140&amp;fit=crop" alt="">
+      <span><span class="author__name">Jonas Bright</span><br><span class="author__role">Gear tester · trail</span></span>
+    </a>
+  </div>
+</section>
+
+
+
+</main>
+
+<!-- ═══ Footer ═══ -->
+<footer class="site-foot">
+  <div class="shell">
+    <div class="foot-grid">
+      <div class="foot-about">
+        <a class="brand" href="index.html">
+          <span class="brand__mark">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#d7fd8c" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="6" cy="18" r="3.2"/><circle cx="18" cy="18" r="3.2"/>
+              <path d="M6 18 10.5 8h4"/><path d="M14 8l4 10"/><path d="M9 8h5"/>
+            </svg>
+          </span>
+          <span class="brand__word">Cad<em>ence</em></span>
+        </a>
+        <p>A running and cycling journal for people who like training more than they like talking about it.</p>
+        <div class="socials">
+          <a href="#" aria-label="Strava"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.6 2 4 13h3.3l2.3-4.6L11.9 13h3.3L9.6 2zm5.6 11-1.6 3.2L12 13H9.7l3.9 8 3.9-8h-2.3z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r="1.2" fill="currentColor" stroke="none"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.6 7.2s-.2-1.4-.8-2c-.8-.8-1.7-.8-2.1-.9C16.9 4.1 12 4.1 12 4.1s-4.9 0-6.7.2c-.4 0-1.3.1-2.1.9-.6.6-.8 2-.8 2S2.2 8.8 2.2 10.5v1.6c0 1.6.2 3.3.2 3.3s.2 1.4.8 2c.8.8 1.8.8 2.2.9 1.8.2 6.6.2 6.6.2s4.9 0 6.7-.2c.4 0 1.3-.1 2.1-.9.6-.6.8-2 .8-2s.2-1.6.2-3.3v-1.6c0-1.7-.2-3.3-.2-3.3zM10.2 14.2V8.6l5.2 2.8-5.2 2.8z"/></svg></a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Topics</h4>
+        <ul>
+          <li><a href="#">Road running</a></li>
+          <li><a href="#">Trail &amp; ultra</a></li>
+          <li><a href="#">Road cycling</a></li>
+          <li><a href="#">Fuel &amp; recovery</a></li>
+          <li><a href="#">Injury</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Training</h4>
+        <ul>
+          <li><a href="#">First 10K</a></li>
+          <li><a href="#">Sub-2 half</a></li>
+          <li><a href="#">Sub-4 marathon</a></li>
+          <li><a href="#">Century ready</a></li>
+          <li><a href="#">Pace calculator</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>About</h4>
+        <ul>
+          <li><a href="#">Our story</a></li>
+          <li><a href="#">How we test</a></li>
+          <li><a href="#">Membership</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">RSS</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>© 2026 Cadence. Published with Ghost.</span>
+      <nav>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="style-guide.html">Style guide</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

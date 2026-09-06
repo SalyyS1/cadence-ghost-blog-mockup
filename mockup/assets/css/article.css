@@ -1,0 +1,307 @@
+/* ==========================================================================
+   article.css — single post: hero, prose column, sticky share rail,
+   pull quotes, workout table, author box, related posts.
+   ========================================================================== */
+
+/* --- Post hero ----------------------------------------------------------- */
+.post-hero { padding-block: var(--gap-xl) 0; }
+.post-hero__inner { max-width: 780px; margin-inline: auto; text-align: center; }
+.post-hero__crumbs {
+  display: flex; justify-content: center; align-items: center; gap: .5rem;
+  font-size: var(--step--1); color: var(--text-muted); margin-bottom: 1.25rem;
+}
+.post-hero__crumbs a:hover { color: var(--brand); }
+.post-title {
+  font-size: clamp(2.25rem, 5vw, 3.75rem);
+  line-height: 1.04;
+  margin-bottom: 1.1rem;
+}
+.post-dek {
+  font-size: 1.1875rem;
+  color: var(--text-muted);
+  max-width: 62ch;
+  margin: 0 auto 1.75rem;
+  line-height: 1.6;
+}
+.post-byline {
+  display: flex; justify-content: center; align-items: center;
+  gap: .75rem; flex-wrap: wrap;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+.post-byline .meta__avatar { width: 38px; height: 38px; }
+
+.post-cover {
+  margin-top: var(--gap-lg);
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 21 / 9;
+  background: var(--neutral-200);
+}
+.post-cover img { width: 100%; height: 100%; object-fit: cover; }
+.post-cover__caption {
+  max-width: 780px;
+  margin: .75rem auto 0;
+  font-size: var(--step--1);
+  color: var(--text-muted);
+  text-align: center;
+}
+
+/* --- Run summary strip (the sport-specific detail) ----------------------- */
+.run-strip {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--gap);
+  max-width: 900px;
+  margin: var(--gap-lg) auto 0;
+  padding: 1.4rem 1.75rem;
+  border-radius: 12px;
+  background: var(--brand-deep);
+  color: #fff;
+}
+.run-strip dt {
+  font-size: .625rem; font-weight: 700; letter-spacing: .14em;
+  text-transform: uppercase; color: rgba(255,255,255,.55);
+}
+.run-strip dd {
+  margin: .3rem 0 0;
+  font-family: var(--font-display);
+  font-size: 1.375rem; font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -.02em;
+}
+.run-strip dd em { font-style: normal; color: var(--accent); }
+
+/* --- Body layout: prose column + sticky share rail ----------------------- */
+.post-body {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 720px) 1fr;
+  gap: var(--gap-lg);
+  justify-content: center;
+  padding-block: var(--band);
+}
+.share {
+  position: sticky;
+  top: 110px;
+  display: grid;
+  gap: .5rem;
+  justify-items: center;
+  height: max-content;
+}
+.share span {
+  font-size: .5625rem; font-weight: 700; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--text-muted); margin-bottom: .25rem;
+}
+.share a {
+  width: 40px; height: 40px;
+  display: grid; place-items: center;
+  border: 1px solid var(--line);
+  border-radius: var(--r-pill);
+  color: var(--neutral-700);
+  transition: all .18s var(--ease);
+}
+.share a:hover { background: var(--brand); border-color: var(--brand); color: #fff; }
+.share svg { width: 16px; height: 16px; }
+
+/* --- Prose --------------------------------------------------------------- */
+.prose { font-size: var(--step-1); line-height: 1.75; color: #2a3f60; }
+.prose > * + * { margin-top: 1.5rem; }
+.prose p { margin: 0; }
+.prose h2 {
+  font-size: 1.875rem;
+  margin-top: 3rem !important;
+  margin-bottom: -.35rem;
+  scroll-margin-top: 100px;
+}
+.prose h3 { font-size: 1.375rem; margin-top: 2.25rem !important; margin-bottom: -.5rem; }
+.prose a { color: var(--brand); text-decoration: underline; text-underline-offset: 3px; }
+.prose strong { color: var(--ink); font-weight: 650; }
+.prose ul, .prose ol { padding-left: 1.35rem; margin-block: 1.25rem; }
+.prose li + li { margin-top: .55rem; }
+.prose li::marker { color: var(--zest-700); font-weight: 700; }
+
+/* Lead paragraph */
+.prose__lead {
+  font-size: 1.3125rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  font-weight: 400;
+}
+.prose__lead::first-letter {
+  float: left;
+  font-family: var(--font-display);
+  font-size: 4.25rem;
+  line-height: .82;
+  font-weight: 650;
+  padding: .06em .12em 0 0;
+  color: var(--brand);
+}
+
+/* Figures inside the article */
+.prose figure { margin: 2.5rem 0; }
+.prose figure img { border-radius: 12px; width: 100%; }
+.prose figcaption {
+  margin-top: .7rem;
+  font-size: var(--step--1);
+  color: var(--text-muted);
+  text-align: center;
+}
+
+/* Pull quote */
+.pullquote {
+  margin: 2.75rem 0;
+  padding-left: 1.5rem;
+  border-left: 4px solid var(--accent);
+  font-family: var(--font-display);
+  font-size: 1.625rem;
+  line-height: 1.35;
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: -.015em;
+}
+.pullquote footer {
+  margin-top: .8rem;
+  font-family: var(--font-sans);
+  font-size: var(--step--1);
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* Callout — coach's note */
+.callout {
+  margin: 2.5rem 0;
+  padding: 1.4rem 1.6rem;
+  border-radius: 12px;
+  background: var(--zest-50);
+  border: 1px solid var(--zest-300);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+.callout h4 {
+  font-family: var(--font-sans);
+  font-size: .6875rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--zest-900);
+  margin-bottom: .5rem;
+}
+.callout p { margin: 0; color: #3b4d2b; }
+
+/* Workout table */
+.workout {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2.5rem 0;
+  font-size: 0.9375rem;
+}
+.workout caption {
+  text-align: left;
+  font-family: var(--font-sans);
+  font-size: .6875rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding-bottom: .8rem;
+}
+.workout th, .workout td {
+  padding: .8rem .9rem;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+}
+.workout thead th {
+  font-size: .6875rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--neutral-700);
+  border-bottom: 2px solid var(--line-strong);
+}
+.workout td:first-child { font-weight: 650; color: var(--ink); white-space: nowrap; }
+.workout tbody tr:nth-child(even) { background: var(--surface-alt); }
+.workout .num { font-variant-numeric: tabular-nums; }
+
+/* --- Tags + author box --------------------------------------------------- */
+.post-tags { display: flex; gap: .5rem; flex-wrap: wrap; margin-top: 3rem; }
+.author-box {
+  display: flex;
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+  padding: 1.75rem;
+  border-radius: 14px;
+  background: var(--surface-alt);
+  border: 1px solid var(--line);
+}
+.author-box img { width: 68px; height: 68px; border-radius: 50%; object-fit: cover; flex: none; }
+.author-box h3 { font-size: 1.1875rem; margin-bottom: .3rem; }
+.author-box p { margin: 0 0 .9rem; font-size: 0.9375rem; color: var(--text-muted); }
+.author-box__links { display: flex; gap: 1rem; font-size: var(--step--1); font-weight: 600; }
+.author-box__links a { color: var(--brand); }
+
+/* --- Prev / next --------------------------------------------------------- */
+.pager {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gap);
+  margin-top: 2.5rem;
+}
+.pager a {
+  padding: 1.25rem 1.4rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  transition: all .2s var(--ease);
+}
+.pager a:hover { border-color: var(--brand); box-shadow: var(--shadow-card); }
+.pager span {
+  display: block;
+  font-size: .625rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: .4rem;
+}
+.pager strong {
+  font-family: var(--font-display);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.3;
+}
+.pager a:last-child { text-align: right; }
+
+/* --- Responsive ---------------------------------------------------------- */
+@media (max-width: 1100px) {
+  .post-body { grid-template-columns: minmax(0, 720px); }
+  .share {
+    position: static;
+    grid-auto-flow: column;
+    justify-content: start;
+    align-items: center;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .share span { margin: 0 .5rem 0 0; }
+  .run-strip { grid-template-columns: repeat(3, 1fr); gap: 1.15rem; }
+}
+
+@media (max-width: 720px) {
+  .post-hero { padding-block: var(--gap-lg) 0; }
+  .post-cover { aspect-ratio: 4 / 3; border-radius: 10px; }
+  .run-strip { grid-template-columns: repeat(2, 1fr); padding: 1.15rem 1.25rem; }
+  .prose { font-size: 1.0625rem; }
+  .prose__lead { font-size: 1.1875rem; }
+  .prose__lead::first-letter { font-size: 3.25rem; }
+  .pullquote { font-size: 1.3125rem; padding-left: 1.15rem; }
+  .author-box { flex-direction: column; }
+  .pager { grid-template-columns: 1fr; }
+  .pager a:last-child { text-align: left; }
+  .workout { font-size: .875rem; }
+  .workout th, .workout td { padding: .65rem .5rem; }
+}
+
+
+
