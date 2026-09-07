@@ -1,7 +1,11 @@
 /* ==========================================================================
-   Design tokens — Cadence (running / cycling blog)
-   Palette extracted from thebodycoach.com stylesheet (client reference).
-   Cobalt = primary, Zest (lime) = accent, Aqua = secondary, Blush = warm surface.
+   Design tokens — Cadence (running / cycling / swimming journal)
+   Revision 2: client feedback round 1.
+   - Single typeface (Inter) across the whole site, per client note on the
+     Luno theme font.
+   - Warm pink surface retired in favour of the light grey used everywhere
+     else, so the gear rail matches the blog sections.
+   - Flame accent added for the newsletter CTA (Rune-theme reference).
    ========================================================================== */
 
 :root {
@@ -22,17 +26,16 @@
   --zest-700: #96c14d;
   --zest-900: #4e6e27;
 
-  /* --- Brand: aqua (secondary accent — data, cycling) --- */
+  /* --- Brand: aqua (secondary accent — data, cycling, swimming) --- */
   --aqua-100: #acf2f8;
   --aqua-500: #00cfda;
   --aqua-800: #176c8f;
 
-  /* --- Brand: blush (warm surface — nutrition, editorial breaks) --- */
-  --blush-100: #fcefee;
-  --blush-300: #ffdbdb;
-  --blush-900: #5b527b;
+  /* --- Flame (newsletter CTA, Rune reference) --- */
+  --flame-500: #e2402f;
+  --flame-600: #c4301f;
 
-  /* --- Neutrals (cool navy-tinted, same family as reference) --- */
+  /* --- Neutrals (cool navy-tinted) --- */
   --neutral-0:   #ffffff;
   --neutral-50:  #f6f9fd;
   --neutral-100: #edf3fb;
@@ -53,23 +56,23 @@
   --line-strong:  var(--neutral-400);
   --surface:      var(--neutral-0);
   --surface-alt:  var(--neutral-50);
-  --surface-warm: var(--blush-100);
+  --surface-grey: var(--neutral-100);
   --brand:        var(--cobalt-500);
   --brand-deep:   var(--cobalt-950);
   --accent:       var(--zest-500);
 
-  /* --- Type --- */
-  --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  /* --- Type: one family, site-wide --- */
   --font-sans: "Inter", -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-display: var(--font-sans);
 
   --step--1: 0.8125rem;   /* 13px  meta, chips */
   --step-0:  1rem;        /* 16px  body */
   --step-1:  1.125rem;    /* 18px  article body */
-  --step-2:  1.375rem;    /* 22px  card title */
+  --step-2:  1.25rem;     /* 20px  card title */
   --step-3:  1.75rem;     /* 28px  section title */
-  --step-4:  2.5rem;      /* 40px  feature title */
-  --step-5:  3.5rem;      /* 56px  hero title */
-  --step-6:  4.5rem;      /* 72px  display */
+  --step-4:  2.25rem;     /* 36px  feature title */
+  --step-5:  3.25rem;     /* 52px  hero title */
+  --step-6:  4.25rem;     /* 68px  display */
 
   /* --- Space / shape --- */
   --gap-xs: 0.5rem;
@@ -77,12 +80,13 @@
   --gap:    1.5rem;
   --gap-lg: 2.5rem;
   --gap-xl: 4rem;
-  --band:   5.5rem;       /* vertical rhythm between sections */
+  --band:   5rem;         /* vertical rhythm between sections */
   --shell:  1240px;       /* max content width */
 
-  --r-sm: 3px;
-  --r:    5px;
-  --r-lg: 10px;
+  --r-sm: 6px;
+  --r:    10px;
+  --r-lg: 14px;
+  --r-xl: 20px;
   --r-pill: 999px;
 
   --shadow-card: 0 1px 2px rgba(0, 25, 60, .04), 0 8px 24px rgba(0, 25, 60, .06);

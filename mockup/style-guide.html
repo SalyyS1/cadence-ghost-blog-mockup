@@ -6,7 +6,7 @@
 <title>Style guide — Cadence</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1&family=Inter:wght@300..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/tokens.css">
 <link rel="stylesheet" href="assets/css/base.css">
 <link rel="stylesheet" href="assets/css/home.css">
@@ -48,17 +48,14 @@
       </span>
       <span class="brand__word">Cad<em>ence</em></span>
     </a>
-    <nav class="nav" aria-label="Main">
-      <a href="index.html">Home</a>
-      <a href="article.html">Article</a>
-      <a href="style-guide.html" aria-current="page">Style guide</a>
-    </nav>
+    <form class="site-search" role="search" onsubmit="return false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
+        <circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/>
+      </svg>
+      <label class="sr-only" for="sg-search">Search posts</label>
+      <input id="sg-search" type="search" placeholder="Search posts" autocomplete="off">
+    </form>
     <div class="head-actions">
-      <button class="icon-btn menu-btn" aria-label="Open menu">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
-          <path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/>
-        </svg>
-      </button>
       <a class="btn btn--primary btn--sm" href="index.html">Back to homepage</a>
     </div>
   </div>
@@ -68,7 +65,7 @@
   <div class="sg-head">
     <span class="eyebrow">Design system</span>
     <h1>Cadence style guide</h1>
-    <p>Palette sampled from thebodycoach.com — cobalt as the primary, lime "zest" as the accent, aqua and blush for supporting surfaces. Everything on the homepage and article page is built from these tokens.</p>
+    <p>Cobalt as the primary, lime "zest" as the accent, flame for newsletter calls to action, and one light grey for every alternate surface. Everything on the homepage and article page is built from these tokens.</p>
   </div>
 
   <!-- Colour -->
@@ -87,12 +84,13 @@
       <div class="sw"><i style="background:#d7fd8c"></i><b>Zest 500</b><code>#d7fd8c</code></div>
       <div class="sw"><i style="background:#4e6e27"></i><b>Zest 900</b><code>#4e6e27</code></div>
       <div class="sw"><i style="background:#00cfda"></i><b>Aqua 500</b><code>#00cfda</code></div>
-      <div class="sw"><i style="background:#fcefee"></i><b>Blush 100</b><code>#fcefee</code></div>
+      <div class="sw"><i style="background:#e2402f"></i><b>Flame 500</b><code>#e2402f</code></div>
       <div class="sw"><i style="background:#00193c"></i><b>Neutral 950</b><code>#00193c</code></div>
       <div class="sw"><i style="background:#112b51"></i><b>Neutral 900</b><code>#112b51</code></div>
       <div class="sw"><i style="background:#60769a"></i><b>Neutral 500</b><code>#60769a</code></div>
       <div class="sw"><i style="background:#dce6f5"></i><b>Neutral 300</b><code>#dce6f5</code></div>
       <div class="sw"><i style="background:#f6f9fd"></i><b>Neutral 50</b><code>#f6f9fd</code></div>
+      <div class="sw"><i style="background:#edf3fb"></i><b>Neutral 100</b><code>#edf3fb</code></div>
       <div class="sw"><i style="background:#ffffff;box-shadow:inset 0 0 0 1px #dce6f5"></i><b>White</b><code>#ffffff</code></div>
     </div>
   </section>
@@ -102,15 +100,15 @@
     <div class="sec-head">
       <div>
         <span class="eyebrow">02 — Type</span>
-        <h2 class="sec-head__title">Fraunces + Inter</h2>
-        <p class="sec-head__sub">Fraunces (serif) for every heading and number. Inter for body, meta and UI. Both are free Google fonts, so no licence cost.</p>
+        <h2 class="sec-head__title">Inter, one family</h2>
+        <p class="sec-head__sub">Inter across headings, body, numbers and UI. Hierarchy comes from weight and tracking rather than a second typeface, matching the reference theme the client picked.</p>
       </div>
     </div>
 
-    <div class="type-row"><span>Hero / 56px</span><div style="font-family:var(--font-display);font-size:3.5rem;font-weight:600;letter-spacing:-.02em;line-height:1.05">Easy runs should feel boring</div></div>
-    <div class="type-row"><span>Feature / 40px</span><div style="font-family:var(--font-display);font-size:2.5rem;font-weight:600;letter-spacing:-.02em">Negative split or bust</div></div>
-    <div class="type-row"><span>Section / 28px</span><div style="font-family:var(--font-display);font-size:1.75rem;font-weight:600;letter-spacing:-.02em">Gear we actually kept</div></div>
-    <div class="type-row"><span>Card / 22px</span><div style="font-family:var(--font-display);font-size:1.375rem;font-weight:600">Hill reps are speedwork in disguise</div></div>
+    <div class="type-row"><span>Hero / 52px</span><div style="font-size:3.25rem;font-weight:700;letter-spacing:-.035em;line-height:1.05">Easy runs should feel boring</div></div>
+    <div class="type-row"><span>Feature / 36px</span><div style="font-size:2.25rem;font-weight:700;letter-spacing:-.03em">Negative split or bust</div></div>
+    <div class="type-row"><span>Section / 28px</span><div style="font-size:1.75rem;font-weight:700;letter-spacing:-.025em">Gear we actually kept</div></div>
+    <div class="type-row"><span>Card / 20px</span><div style="font-size:1.25rem;font-weight:700;letter-spacing:-.02em">Hill reps are speedwork in disguise</div></div>
     <div class="type-row"><span>Body / 18px</span><div style="font-size:1.125rem;line-height:1.75;max-width:60ch;color:#2a3f60">Aerobic decoupling is the number I ended up caring about: how much your heart rate drifts upward over a long run while pace stays constant.</div></div>
     <div class="type-row"><span>Meta / 13px</span><div class="meta"><span class="meta__name">Mara Ellison</span><span class="meta__dot"></span><span>8 min read</span><span class="meta__dot"></span><span>4 March 2026</span></div></div>
     <div class="type-row"><span>Eyebrow / 11px</span><span class="eyebrow">Featured this week</span></div>
@@ -127,7 +125,8 @@
 
     <div class="demo-row" style="margin-bottom:1.5rem">
       <button class="btn btn--primary">Subscribe</button>
-      <button class="btn btn--accent">Join for £6 / month</button>
+      <button class="btn btn--flame">Subscribe (newsletter)</button>
+      <button class="btn btn--accent">Accent</button>
       <button class="btn btn--ghost">Browse all articles</button>
       <button class="btn btn--primary btn--sm">Small primary</button>
       <button class="btn btn--ghost btn--sm">Small ghost</button>
@@ -148,7 +147,7 @@
         21.1 km · 4:12:00
       </span>
       <span class="gear__score">8.7 / 10</span>
-      <span class="plan__badge" style="margin:0">Most popular</span>
+      <span class="tag-on-img" style="position:static">Swimming</span>
     </div>
     <p class="sg-note">Numbers use tabular figures so paces and distances stay aligned in tables and cards.</p>
   </section>
@@ -189,10 +188,14 @@
         </div>
       </article>
 
-      <a class="tile" href="#" style="aspect-ratio:3/2">
-        <img src="https://images.unsplash.com/photo-1502224562085-639556652f33?w=600&amp;h=400&amp;fit=crop&amp;q=75" alt="">
-        <span class="tile__label"><span class="tile__name">Road Running</span><span class="tile__count">48 articles</span></span>
-      </a>
+      <aside class="advert" aria-label="Advertisement example">
+        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&amp;h=600&amp;fit=crop&amp;q=75" alt="Red running shoe on a red background">
+        <span class="advert__label">Advert</span>
+        <div class="advert__body">
+          <strong>Sixth-slot advert</strong>
+          <span>Sponsor placement &middot; 600 &times; 600</span>
+        </div>
+      </aside>
     </div>
 
     <div class="stats">
@@ -207,22 +210,22 @@
   <section class="sg-block">
     <div class="sec-head">
       <div>
-        <span class="eyebrow">05 — Dark block</span>
-        <h2 class="sec-head__title">Newsletter / membership CTA</h2>
+        <span class="eyebrow">05 — Newsletter</span>
+        <h2 class="sec-head__title">Newsletter call to action</h2>
       </div>
     </div>
     <div class="subscribe">
       <div class="subscribe__grid">
         <div>
-          <span class="eyebrow eyebrow--light">The Sunday Split</span>
+          <span class="eyebrow eyebrow--muted">Be the first to know</span>
           <h2>One honest email every Sunday morning.</h2>
           <p>The week's training, what broke, what helped, and one route worth driving to.</p>
         </div>
         <form class="subscribe__form" onsubmit="return false">
           <div class="subscribe__row">
             <label class="sr-only" for="sg-email">Email address</label>
-            <input id="sg-email" type="email" placeholder="you@example.com">
-            <button class="btn btn--onDark" type="submit">Subscribe</button>
+            <input id="sg-email" type="email" placeholder="Your email address">
+            <button class="btn btn--flame" type="submit">Subscribe</button>
           </div>
           <span class="subscribe__fine">Free forever. Unsubscribe in one click.</span>
         </form>
