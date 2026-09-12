@@ -4,3 +4,12 @@ desktop.ini
 node_modules/
 .env
 .env.*
+!.env.example
+dist/
+*.log
+.claude-terminal
+preview/qa-*.png
+
+# Optional bind-mounted runtime data. Named Docker volumes are preferred.
+ghost-content/
+mysql-data/

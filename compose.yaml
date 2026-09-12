@@ -1,0 +1,88 @@
+name: bateson-ghost
+
+services:
+  database:
+    image: mysql:8.4.11
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-ghost}
+      MYSQL_USER: ${MYSQL_USER:-ghost}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:?Set MYSQL_PASSWORD in .env}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:?Set MYSQL_ROOT_PASSWORD in .env}
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping --host=127.0.0.1 --user=root --password=$$MYSQL_ROOT_PASSWORD --silent"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 30s
+    networks:
+      - backend
+
+  ghost:
+    image: ghost:6.54.1-alpine
+    restart: unless-stopped
+    init: true
+    depends_on:
+      database:
+        condition: service_healthy
+    environment:
+      NODE_ENV: production
+      url: ${SITE_URL:-http://localhost:2368}
+      database__client: mysql
+      database__connection__host: database
+      database__connection__port: 3306
+      database__connection__user: ${MYSQL_USER:-ghost}
+      database__connection__password: ${MYSQL_PASSWORD:?Set MYSQL_PASSWORD in .env}
+      database__connection__database: ${MYSQL_DATABASE:-ghost}
+      mail__transport: ${MAIL_TRANSPORT:-Direct}
+      mail__from: ${MAIL_FROM:-Bateson <noreply@localhost>}
+      privacy__useUpdateCheck: "false"
+      privacy__useGravatar: "false"
+    ports:
+      - "${GHOST_BIND_ADDRESS:-127.0.0.1}:${GHOST_PORT:-2368}:2368"
+    volumes:
+      - ghost_content:/var/lib/ghost/content
+      - ./ghost-theme-bateson:/var/lib/ghost/content/themes/bateson:ro
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:2368').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 15s
+      timeout: 5s
+      retries: 12
+      start_period: 45s
+    networks:
+      - backend
+      - web
+
+  caddy:
+    image: caddy:2.11.4-alpine
+    profiles: ["production"]
+    restart: unless-stopped
+    depends_on:
+      ghost:
+        condition: service_healthy
+    environment:
+      DOMAIN: ${DOMAIN:?Set DOMAIN in .env for the production profile}
+      ACME_EMAIL: ${ACME_EMAIL:-admin@example.com}
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    volumes:
+      - ./docker/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    networks:
+      - web
+
+networks:
+  backend:
+    internal: true
+  web:
+
+volumes:
+  ghost_content:
+  mysql_data:
+  caddy_data:
+  caddy_config:

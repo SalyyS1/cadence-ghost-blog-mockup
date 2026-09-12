@@ -1,0 +1,10 @@
+services:
+  ghost:
+    environment:
+      mail__transport: SMTP
+      mail__from: ${MAIL_FROM:?Set MAIL_FROM in .env}
+      mail__options__host: ${MAIL_HOST:?Set MAIL_HOST in .env}
+      mail__options__port: ${MAIL_PORT:-587}
+      mail__options__secure: ${MAIL_SECURE:-false}
+      mail__options__auth__user: ${MAIL_USER:?Set MAIL_USER in .env}
+      mail__options__auth__pass: ${MAIL_PASSWORD:?Set MAIL_PASSWORD in .env}

@@ -1,0 +1,21 @@
+{
+  email {$ACME_EMAIL:admin@example.com}
+}
+
+{$DOMAIN} {
+  encode zstd gzip
+
+  header {
+    X-Content-Type-Options nosniff
+    Referrer-Policy strict-origin-when-cross-origin
+    Permissions-Policy "camera=(), microphone=(), geolocation=()"
+    -Server
+  }
+
+  reverse_proxy ghost:2368
+
+  log {
+    output stdout
+    format json
+  }
+}
