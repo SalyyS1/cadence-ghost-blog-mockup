@@ -1,0 +1,45 @@
+name: Validate Ghost system
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+      - run: npm run audit:runtime
+      - run: npm test
+      - run: npm run theme:check
+      - run: npm run seed:dry
+      - run: npm run theme:zip
+      - name: Validate Docker Compose
+        run: docker compose --env-file .env.example -f compose.yaml -f compose.mail.yaml --profile production config --quiet
+      - name: Validate Caddy configuration
+        run: >-
+          docker run --rm
+          -e DOMAIN=blog.example.com
+          -e ACME_EMAIL=admin@example.com
+          -v "$PWD/docker/Caddyfile:/etc/caddy/Caddyfile:ro"
+          caddy:2.11.4-alpine
+          caddy validate --config /etc/caddy/Caddyfile
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bateson-ghost-theme
+          path: dist/bateson.zip
+          if-no-files-found: error
