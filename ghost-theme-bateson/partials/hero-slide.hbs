@@ -1,0 +1,20 @@
+<article class="hero-slide{{#if @first}} is-active{{/if}}" data-slide aria-hidden="{{#if @first}}false{{else}}true{{/if}}">
+  <div class="hero-slide__media">
+    {{#if feature_image}}
+      <img
+        srcset="{{img_url feature_image size="m"}} 800w, {{img_url feature_image size="l"}} 1200w, {{img_url feature_image size="xl"}} 2000w"
+        sizes="(max-width: 900px) 100vw, 1400px"
+        src="{{img_url feature_image size="xl"}}"
+        alt=""
+        {{#unless @first}}loading="lazy"{{/unless}}
+      >
+    {{else}}
+      <span class="media-placeholder" aria-hidden="true"></span>
+    {{/if}}
+  </div>
+  <div class="hero-slide__content">
+    <h2 class="hero-slide__title"><a href="{{url}}">{{title}}</a></h2>
+    <p class="hero-slide__dek">{{excerpt words="24"}}</p>
+    <p class="hero-slide__meta">{{primary_author.name}} | {{date format="DD MMMM YYYY"}}</p>
+  </div>
+</article>

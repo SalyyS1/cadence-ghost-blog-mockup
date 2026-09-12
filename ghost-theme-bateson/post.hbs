@@ -1,0 +1,99 @@
+{{!< default}}
+
+{{#post}}
+<main id="main-content">
+  <article class="article {{post_class}}">
+    <header class="article-hero">
+      <div class="shell article-hero__card">
+        <div class="article-hero__copy">
+          {{#if primary_tag}}<p class="article-hero__kicker"><a href="{{primary_tag.url}}">{{primary_tag.name}}</a></p>{{/if}}
+          <h1 class="article-title">{{title}}</h1>
+          <p class="article-hero__dek">{{#if custom_excerpt}}{{custom_excerpt}}{{else}}{{excerpt words="28"}}{{/if}}</p>
+          <p class="article-hero__meta">{{primary_author.name}} | {{date format="DD MMMM YYYY"}} | {{reading_time}}</p>
+        </div>
+        <figure class="article-hero__media">
+          {{#if feature_image}}
+            <img
+              srcset="{{img_url feature_image size="m"}} 800w, {{img_url feature_image size="l"}} 1200w, {{img_url feature_image size="xl"}} 2000w"
+              sizes="(max-width: 900px) 100vw, 50vw"
+              src="{{img_url feature_image size="l"}}"
+              alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+            >
+            {{#if feature_image_caption}}<figcaption>{{feature_image_caption}}</figcaption>{{/if}}
+          {{else}}
+            <span class="media-placeholder" role="img" aria-label="Image placeholder"></span>
+          {{/if}}
+        </figure>
+      </div>
+    </header>
+
+    <div class="shell article-layout">
+      <div class="article-main">
+        <div class="gh-content">{{{content}}}</div>
+
+        {{#unless access}}
+          <aside class="content-locked">
+            <p class="eyebrow">Members only</p>
+            <h2>Continue reading with Bateson</h2>
+            <p>Join the publication to unlock this story and receive new editions.</p>
+            <a class="btn" href="#/portal/signup" data-portal="signup">Become a member</a>
+          </aside>
+        {{/unless}}
+
+        {{#if tags}}
+          <div class="article-tags" aria-label="Article tags">
+            {{#foreach tags}}<a href="{{url}}">{{name}}</a>{{/foreach}}
+          </div>
+        {{/if}}
+
+        {{#primary_author}}
+          <section class="author-box" aria-label="About the author">
+            {{#if profile_image}}<img src="{{img_url profile_image size="xs"}}" alt="{{name}}" loading="lazy">{{else}}<span class="author-box__avatar" aria-hidden="true"></span>{{/if}}
+            <div><h2><a href="{{url}}">{{name}}</a></h2>{{#if bio}}<p>{{bio}}</p>{{/if}}</div>
+          </section>
+        {{/primary_author}}
+
+        <nav class="pager" aria-label="More articles">
+          {{#prev_post in="primary_tag"}}<a href="{{url}}"><span>Previous</span><strong>{{title}}</strong></a>{{/prev_post}}
+          {{#next_post in="primary_tag"}}<a href="{{url}}"><span>Next</span><strong>{{title}}</strong></a>{{/next_post}}
+        </nav>
+      </div>
+
+      <aside class="article-sidebar" aria-label="More from {{@site.title}}">
+        {{#if @custom.show_advertising}}
+          <div><h2 class="article-sidebar__heading">Sponsored</h2><a class="sponsor-slot" href="{{@custom.advert_url}}">Advert</a></div>
+        {{/if}}
+        <div>
+          <h2 class="article-sidebar__heading">{{@custom.post_sidebar_heading}}</h2>
+          <nav class="article-next" aria-label="Related articles">
+            {{#if primary_tag}}
+              {{#get "posts" filter="primary_tag:{{primary_tag.slug}}+id:-{{id}}" limit="3"}}
+                {{#foreach posts}}<a href="{{url}}">{{title}}</a>{{/foreach}}
+              {{/get}}
+            {{/if}}
+          </nav>
+        </div>
+      </aside>
+    </div>
+
+    {{#if comments}}
+      <section class="comments-section shell" aria-label="Member discussion">
+        {{comments title="Member discussion" count=true mode="light" saturation=55}}
+      </section>
+    {{/if}}
+  </article>
+
+  <section class="article-related" aria-labelledby="related-title">
+    <div class="shell">
+      <header class="section-head"><div><h2 id="related-title">More stories</h2><p>Keep reading from {{@site.title}}.</p></div><a class="section-head__action" href="{{@site.url}}">Back home</a></header>
+      <div class="article-related__grid">
+        {{#get "posts" filter="id:-{{id}}" limit="3" include="authors,tags"}}
+          {{#foreach posts}}{{> "post-card"}}{{/foreach}}
+        {{/get}}
+      </div>
+    </div>
+  </section>
+
+  {{> "newsletter" form_id="post-newsletter-email"}}
+</main>
+{{/post}}

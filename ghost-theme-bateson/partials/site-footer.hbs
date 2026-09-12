@@ -1,0 +1,26 @@
+<footer class="site-foot">
+  <div class="shell">
+    <div class="foot-top">
+      <a class="brand" href="{{@site.url}}" aria-label="{{@site.title}} home">
+        {{#if @site.logo}}<img class="brand__logo" src="{{@site.logo}}" alt="{{@site.title}}">{{else}}<span class="brand__word">{{@site.title}}</span>{{/if}}
+      </a>
+      <div class="socials">{{> "social-icons"}}</div>
+    </div>
+    <div class="foot-grid">
+      <div class="foot-col"><h3>Running</h3><ul><li><a href="{{@site.url}}/tag/running/">Race reports</a></li><li><a href="{{@site.url}}/tag/running/">Training</a></li><li><a href="{{@site.url}}/tag/running/">Routes</a></li></ul></div>
+      <div class="foot-col"><h3>Cycling</h3><ul><li><a href="{{@site.url}}/tag/cycling/">Road</a></li><li><a href="{{@site.url}}/tag/cycling/">Gravel</a></li><li><a href="{{@site.url}}/tag/cycling/">Maintenance</a></li></ul></div>
+      <div class="foot-col"><h3>Swimming</h3><ul><li><a href="{{@site.url}}/tag/swimming/">Pool</a></li><li><a href="{{@site.url}}/tag/swimming/">Open water</a></li><li><a href="{{@site.url}}/tag/swimming/">Technique</a></li></ul></div>
+      <div class="foot-col foot-col--newsletter">
+        <h3>{{@custom.newsletter_heading}}</h3>
+        <p class="foot-note">{{@custom.newsletter_text}}</p>
+        <form class="member-form member-form--footer" data-members-form="subscribe">
+          <label class="sr-only" for="footer-email">Email address</label>
+          <input id="footer-email" name="email" type="email" autocomplete="email" placeholder="Email address" required data-members-email>
+          <button class="btn btn--small" type="submit"><span class="member-form__default">Subscribe</span><span class="member-form__loading">Adding...</span><span class="member-form__success">Done</span></button>
+          <p class="member-form__message member-form__message--error" data-members-error></p>
+        </form>
+      </div>
+    </div>
+    <p class="foot-base">© <span data-current-year>{{date format="YYYY"}}</span> {{@site.title}}. All rights reserved.</p>
+  </div>
+</footer>

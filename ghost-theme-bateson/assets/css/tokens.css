@@ -1,0 +1,35 @@
+:root {
+  --blue-700: var(--ghost-accent-color, #034fc5);
+  --blue-800: #003fa5;
+  --ink: #111111;
+  --text: #242424;
+  --muted: #676767;
+  --surface: #ffffff;
+  --surface-soft: #f6f6f6;
+  --surface-mid: #e7e7e7;
+  --line: #e4e4e4;
+  --font-sans: var(--gh-font-body, "Archivo", Arial, sans-serif);
+  --font-display: var(--gh-font-heading, "Archivo", Arial, sans-serif);
+  --text-xs: 0.6875rem;
+  --text-sm: 0.8125rem;
+  --text-md: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 2rem;
+  --text-hero: clamp(2.25rem, 4.2vw, 4rem);
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --shell: 1400px;
+  --radius-sm: 0.75rem;
+  --radius-card: 1.375rem;
+  --radius-pill: 999px;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 160ms;
+  --duration-base: 260ms;
+}

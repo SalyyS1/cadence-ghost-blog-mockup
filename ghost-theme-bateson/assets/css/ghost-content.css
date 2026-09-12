@@ -1,0 +1,208 @@
+.gh-content {
+  color: var(--text);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+}
+
+.gh-content--page {
+  width: calc(100% - 2rem);
+  max-width: 54rem;
+  margin-inline: auto;
+  padding-block: var(--space-8) var(--space-16);
+}
+
+.gh-content > * {
+  width: 100%;
+  max-width: 46rem;
+  margin-inline: auto;
+}
+
+.gh-content > * + * {
+  margin-top: var(--space-6);
+}
+
+.gh-content > p:first-child {
+  color: var(--ink);
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.gh-content h2 {
+  margin-top: var(--space-12);
+  font-size: var(--text-xl);
+  text-transform: uppercase;
+}
+
+.gh-content h3 {
+  margin-top: var(--space-8);
+  font-size: var(--text-lg);
+  text-transform: uppercase;
+}
+
+.gh-content h4 {
+  margin-top: var(--space-8);
+  font-size: var(--text-md);
+  text-transform: uppercase;
+}
+
+.gh-content h2 + *, .gh-content h3 + *, .gh-content h4 + * {
+  margin-top: var(--space-3);
+}
+
+.gh-content a {
+  color: var(--blue-700);
+  text-decoration: underline;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.2em;
+}
+
+.gh-content strong {
+  color: var(--ink);
+}
+
+.gh-content ul, .gh-content ol {
+  padding-left: var(--space-6);
+}
+
+.gh-content li + li {
+  margin-top: var(--space-2);
+}
+
+.gh-content blockquote {
+  padding: var(--space-6);
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: var(--surface-soft);
+  color: var(--ink);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.gh-content hr {
+  height: 1px;
+  border: 0;
+  background: var(--line);
+}
+
+.gh-content img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-sm);
+}
+
+.gh-content figcaption {
+  margin-top: var(--space-2);
+  color: var(--muted);
+  font-size: var(--text-xs);
+  text-align: center;
+}
+
+.gh-content table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-sm);
+}
+
+.gh-content th, .gh-content td {
+  padding: var(--space-3) var(--space-2);
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+}
+
+.gh-content th {
+  color: var(--muted);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+}
+
+.gh-content pre {
+  overflow-x: auto;
+  padding: var(--space-6);
+  border-radius: var(--radius-sm);
+  background: var(--ink);
+  color: var(--surface);
+  font-size: var(--text-sm);
+}
+
+.gh-content code {
+  padding: 0.1em 0.3em;
+  border-radius: 0.25rem;
+  background: var(--surface-soft);
+  font-size: 0.9em;
+}
+
+.gh-content pre code {
+  padding: 0;
+  background: transparent;
+}
+
+.gh-content .kg-width-wide {
+  max-width: 64rem;
+}
+
+.gh-content .kg-width-full {
+  max-width: none;
+}
+
+.kg-image-card, .kg-gallery-card, .kg-video-card, .kg-audio-card,
+.kg-file-card, .kg-bookmark-card, .kg-product-card, .kg-signup-card,
+.kg-header-card, .kg-callout-card, .kg-toggle-card, .kg-embed-card {
+  margin-block: var(--space-8);
+}
+
+.kg-gallery-container {
+  gap: var(--space-2);
+}
+
+.kg-gallery-row {
+  gap: var(--space-2);
+}
+
+.kg-bookmark-container, .kg-file-card-container, .kg-product-card-container,
+.kg-toggle-card, .kg-callout-card {
+  overflow: hidden;
+  border: 1px solid var(--line) !important;
+  border-radius: var(--radius-sm) !important;
+  box-shadow: none !important;
+}
+
+.kg-bookmark-title, .kg-file-card-title, .kg-product-card-title {
+  color: var(--ink);
+  font-family: var(--font-display);
+}
+
+.kg-btn, .kg-signup-card-button, .kg-product-card-button {
+  border-radius: var(--radius-pill) !important;
+  background: var(--blue-700) !important;
+  color: var(--surface) !important;
+  font-family: var(--font-sans) !important;
+  font-size: var(--text-xs) !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+  text-transform: uppercase;
+}
+
+.kg-header-card, .kg-signup-card {
+  border-radius: var(--radius-card);
+}
+
+.kg-callout-card {
+  background: var(--surface-soft);
+}
+
+.kg-toggle-heading-text {
+  color: var(--ink);
+  font-family: var(--font-display);
+}
+
+.kg-video-container, .kg-audio-card {
+  border-radius: var(--radius-sm);
+}
+
+@media (max-width: 560px) {
+  .gh-content { font-size: 1rem; }
+  .gh-content table { display: block; overflow-x: auto; }
+  .gh-content blockquote { padding: var(--space-4); }
+}

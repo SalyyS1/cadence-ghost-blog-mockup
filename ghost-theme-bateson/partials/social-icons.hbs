@@ -1,0 +1,13 @@
+{{#if @site.facebook}}
+  <a href="{{social_url type="facebook"}}" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3c-2.8 0-5 2.2-5 5v2H6v4h3v5h4v-5h3l1-4h-4V9c0-.6.4-1 1-1z"/></svg>
+  </a>
+{{/if}}
+{{#if @site.twitter}}
+  <a href="{{social_url type="twitter"}}" target="_blank" rel="noopener noreferrer" aria-label="X / Twitter">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 3H22l-6.8 7.8L23.2 21h-6.3l-4.9-6.4L6.4 21H3.3l7.2-8.3L2.8 3h6.4l4.4 5.8L18.9 3zm-1.1 16h1.7L8.4 4.9H6.6L17.8 19z"/></svg>
+  </a>
+{{/if}}
+{{#if @site.secondary_navigation}}
+  {{navigation type="secondary"}}
+{{/if}}

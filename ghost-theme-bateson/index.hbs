@@ -1,0 +1,120 @@
+{{!< default}}
+
+<main id="main-content">
+  {{#is "home"}}
+    <h1 class="sr-only">{{@site.title}}: running, cycling and swimming</h1>
+
+    <section class="hero" aria-label="Featured stories">
+      <div class="hero-carousel" data-carousel>
+        <div class="hero-carousel__viewport">
+          {{#get "posts" filter="featured:true" limit="3" include="authors,tags"}}
+            {{#foreach posts}}
+              {{> "hero-slide"}}
+            {{else}}
+              {{#get "posts" limit="3" include="authors,tags"}}
+                {{#foreach posts}}
+                  {{> "hero-slide"}}
+                {{else}}
+                  <article class="hero-slide hero-slide--empty is-active" data-slide aria-hidden="false">
+                    <div class="hero-slide__content">
+                      <h2 class="hero-slide__title">{{@site.title}}</h2>
+                      <p class="hero-slide__dek">{{@site.description}}</p>
+                    </div>
+                  </article>
+                {{/foreach}}
+              {{/get}}
+            {{/foreach}}
+          {{/get}}
+        </div>
+        <div class="hero-carousel__controls" data-carousel-controls>
+          <button class="hero-carousel__arrow" type="button" data-prev aria-label="Previous featured story">←</button>
+          <div class="hero-carousel__dots" data-dots aria-label="Choose featured story"></div>
+          <button class="hero-carousel__arrow" type="button" data-next aria-label="Next featured story">→</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="sport-section" id="running" aria-labelledby="running-title">
+      <div class="shell">
+        <header class="section-head">
+          <div><h2 id="running-title">Running</h2><p>{{@custom.running_intro}}</p></div>
+          <a class="section-head__action" href="{{@site.url}}/tag/running/">Read more</a>
+        </header>
+        <div class="sport-grid">
+          {{#get "posts" filter="tag:running" limit="5" include="authors,tags"}}
+            {{#foreach posts}}{{> "post-card"}}{{else}}<p class="empty-state">Add posts with the running tag in Ghost Admin.</p>{{/foreach}}
+          {{/get}}
+          {{#if @custom.show_advertising}}<a class="advert" href="{{@custom.advert_url}}"><span>Advert</span></a>{{/if}}
+        </div>
+      </div>
+    </section>
+
+    <section class="promo-band" aria-label="Featured running product">
+      <div class="shell">
+        <article class="promo-card">
+          <a class="promo-card__media" href="{{@custom.first_promo_url}}" aria-label="Read {{@custom.first_promo_title}}">
+            {{#if @custom.first_promo_image}}<img src="{{img_url @custom.first_promo_image size="l"}}" alt="{{@custom.first_promo_title}}" loading="lazy">{{else}}<span class="media-placeholder" aria-hidden="true"></span>{{/if}}
+          </a>
+          <div class="promo-card__copy">
+            <h2 class="promo-card__title">{{@custom.first_promo_title}}</h2>
+            <p class="promo-card__dek">{{@custom.first_promo_text}}</p>
+            <a class="promo-card__link" href="{{@custom.first_promo_url}}">Read more</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="sport-section" id="cycling" aria-labelledby="cycling-title">
+      <div class="shell">
+        <header class="section-head">
+          <div><h2 id="cycling-title">Cycling</h2><p>{{@custom.cycling_intro}}</p></div>
+          <a class="section-head__action" href="{{@site.url}}/tag/cycling/">Read more</a>
+        </header>
+        <div class="sport-grid">
+          {{#get "posts" filter="tag:cycling" limit="5" include="authors,tags"}}
+            {{#foreach posts}}{{> "post-card"}}{{else}}<p class="empty-state">Add posts with the cycling tag in Ghost Admin.</p>{{/foreach}}
+          {{/get}}
+          {{#if @custom.show_advertising}}<a class="advert" href="{{@custom.advert_url}}"><span>Advert</span></a>{{/if}}
+        </div>
+      </div>
+    </section>
+
+    <section class="promo-band" aria-label="Featured cycling product">
+      <div class="shell">
+        <article class="promo-card">
+          <a class="promo-card__media" href="{{@custom.second_promo_url}}" aria-label="Read {{@custom.second_promo_title}}">
+            {{#if @custom.second_promo_image}}<img src="{{img_url @custom.second_promo_image size="l"}}" alt="{{@custom.second_promo_title}}" loading="lazy">{{else}}<span class="media-placeholder" aria-hidden="true"></span>{{/if}}
+          </a>
+          <div class="promo-card__copy">
+            <h2 class="promo-card__title">{{@custom.second_promo_title}}</h2>
+            <p class="promo-card__dek">{{@custom.second_promo_text}}</p>
+            <a class="promo-card__link" href="{{@custom.second_promo_url}}">Read more</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="sport-section" id="swimming" aria-labelledby="swimming-title">
+      <div class="shell">
+        <header class="section-head">
+          <div><h2 id="swimming-title">Swimming</h2><p>{{@custom.swimming_intro}}</p></div>
+          <a class="section-head__action" href="{{@site.url}}/tag/swimming/">Read more</a>
+        </header>
+        <div class="sport-grid">
+          {{#get "posts" filter="tag:swimming" limit="5" include="authors,tags"}}
+            {{#foreach posts}}{{> "post-card"}}{{else}}<p class="empty-state">Add posts with the swimming tag in Ghost Admin.</p>{{/foreach}}
+          {{/get}}
+          {{#if @custom.show_advertising}}<a class="advert" href="{{@custom.advert_url}}"><span>Advert</span></a>{{/if}}
+        </div>
+      </div>
+    </section>
+
+    {{> "newsletter" form_id="home-newsletter-email"}}
+  {{else}}
+    <section class="archive shell" aria-labelledby="archive-title">
+      <header class="archive-head"><p class="eyebrow">Latest stories</p><h1 id="archive-title">{{@site.title}}</h1><p>{{@site.description}}</p></header>
+      <div class="archive-grid">{{#foreach posts}}{{> "post-card"}}{{else}}<p class="empty-state">No stories published yet.</p>{{/foreach}}</div>
+      {{pagination}}
+    </section>
+  {{/is}}
+</main>

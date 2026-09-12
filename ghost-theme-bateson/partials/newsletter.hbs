@@ -1,0 +1,21 @@
+<section class="newsletter-section shell" aria-label="Newsletter signup">
+  <div class="newsletter">
+    <div class="newsletter__copy">
+      <h2>{{@custom.newsletter_heading}}</h2>
+      <p>{{@custom.newsletter_text}}</p>
+    </div>
+    <form class="member-form" data-members-form="subscribe">
+      <div class="member-form__row">
+        <label class="sr-only" for="{{form_id}}">Email address</label>
+        <input id="{{form_id}}" name="email" type="email" autocomplete="email" placeholder="Email address" required data-members-email>
+        <button class="btn btn--small" type="submit">
+          <span class="member-form__default">Subscribe</span>
+          <span class="member-form__loading">Adding...</span>
+          <span class="member-form__success">Subscribed</span>
+        </button>
+      </div>
+      <p class="member-form__message member-form__message--success">Check your inbox to confirm your subscription.</p>
+      <p class="member-form__message member-form__message--error" data-members-error></p>
+    </form>
+  </div>
+</section>

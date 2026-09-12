@@ -1,0 +1,15 @@
+{{!< default}}
+
+<main id="main-content" class="archive shell">
+  {{#tag}}
+    <header class="archive-head">
+      <p class="eyebrow">Topic</p>
+      <h1>{{name}}</h1>
+      {{#if description}}<p>{{description}}</p>{{/if}}
+    </header>
+  {{/tag}}
+  <div class="archive-grid">
+    {{#foreach posts}}{{> "post-card"}}{{else}}<p class="empty-state">No stories in this topic yet.</p>{{/foreach}}
+  </div>
+  {{pagination}}
+</main>

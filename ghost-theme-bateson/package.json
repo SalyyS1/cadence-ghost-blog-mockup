@@ -1,0 +1,126 @@
+{
+  "name": "bateson",
+  "description": "A minimal sports editorial theme for running, cycling and swimming publications",
+  "version": "1.0.0",
+  "license": "MIT",
+  "homepage": "https://github.com/SalyyS1/cadence-ghost-blog-mockup",
+  "docs": "https://github.com/SalyyS1/cadence-ghost-blog-mockup/blob/main/docs/content-admin-guide.md",
+  "author": {
+    "name": "Bateson",
+    "email": "hello@bateson.example"
+  },
+  "keywords": [
+    "ghost-theme",
+    "sports",
+    "editorial",
+    "newsletter"
+  ],
+  "engines": {
+    "ghost": ">=6.0.0"
+  },
+  "config": {
+    "posts_per_page": 12,
+    "card_assets": true,
+    "image_sizes": {
+      "xs": {
+        "width": 160
+      },
+      "s": {
+        "width": 400
+      },
+      "m": {
+        "width": 800
+      },
+      "l": {
+        "width": 1200
+      },
+      "xl": {
+        "width": 2000
+      }
+    },
+    "custom": {
+      "show_advertising": {
+        "type": "boolean",
+        "default": true,
+        "group": "homepage",
+        "description": "Show advertising placeholders in sport grids and articles"
+      },
+      "advert_url": {
+        "type": "text",
+        "default": "#/portal/signup",
+        "group": "homepage",
+        "description": "Destination used by advertising placeholders"
+      },
+      "running_intro": {
+        "type": "text",
+        "default": "Race reports, training and the miles between.",
+        "group": "homepage"
+      },
+      "cycling_intro": {
+        "type": "text",
+        "default": "Road, gravel and routes worth riding.",
+        "group": "homepage"
+      },
+      "swimming_intro": {
+        "type": "text",
+        "default": "Pool sessions, open water and better technique.",
+        "group": "homepage"
+      },
+      "first_promo_title": {
+        "type": "text",
+        "default": "Adidas Evo SL",
+        "group": "homepage"
+      },
+      "first_promo_text": {
+        "type": "text",
+        "default": "A light daily trainer for runners who want more speed without giving up the easy miles.",
+        "group": "homepage"
+      },
+      "first_promo_url": {
+        "type": "text",
+        "default": "/tag/running/",
+        "group": "homepage"
+      },
+      "first_promo_image": {
+        "type": "image",
+        "group": "homepage",
+        "description": "Optional image for the first homepage promotion"
+      },
+      "second_promo_title": {
+        "type": "text",
+        "default": "Canyon Endurance CF",
+        "group": "homepage"
+      },
+      "second_promo_text": {
+        "type": "text",
+        "default": "A long-distance build with a calm ride, sensible contact points and enough speed for home.",
+        "group": "homepage"
+      },
+      "second_promo_url": {
+        "type": "text",
+        "default": "/tag/cycling/",
+        "group": "homepage"
+      },
+      "second_promo_image": {
+        "type": "image",
+        "group": "homepage",
+        "description": "Optional image for the second homepage promotion"
+      },
+      "newsletter_heading": {
+        "type": "text",
+        "default": "Subscribe to our newsletter",
+        "group": "homepage"
+      },
+      "newsletter_text": {
+        "type": "text",
+        "default": "New stories, race notes and practical training ideas.",
+        "group": "homepage"
+      },
+      "post_sidebar_heading": {
+        "type": "text",
+        "default": "Read next",
+        "group": "post"
+      }
+    }
+  }
+}
