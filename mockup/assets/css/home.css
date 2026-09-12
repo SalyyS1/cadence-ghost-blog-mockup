@@ -1,297 +1,429 @@
-/* ==========================================================================
-   home.css — home page only: full-bleed featured carousel, the three sport
-   sections (5 posts + 1 advert slot each), stats strip, race report,
-   gear rail.
-   ========================================================================== */
+/* Bateson homepage. The supplied wireframe is a calm, repeated race-card grid. */
 
-/* --- Full-bleed featured carousel ---------------------------------------- */
 .hero {
-  padding: 0;
-  background: var(--brand-deep);
+  padding-bottom: var(--space-12);
 }
+
 .hero-carousel {
   position: relative;
-  isolation: isolate;
-  min-height: min(820px, calc(100svh - 78px));
-  color: #fff;
-  outline: none;
+  max-width: var(--shell);
+  min-height: clamp(34rem, 51vw, 47.5rem);
+  margin-inline: auto;
+  padding-inline: 3.125rem;
 }
-.hero-carousel:focus-visible { box-shadow: inset 0 0 0 3px var(--accent); }
-.hero-carousel__viewport { position: relative; min-height: inherit; overflow: hidden; }
+
+.hero-carousel__viewport {
+  position: relative;
+  min-height: inherit;
+  overflow: hidden;
+  border-radius: var(--radius-card);
+  background: var(--surface-soft);
+}
+
 .hero-slide {
   position: absolute;
   inset: 0;
-  min-height: inherit;
+  display: flex;
   visibility: hidden;
+  min-height: inherit;
   opacity: 0;
   pointer-events: none;
-  transition: opacity .65s var(--ease), visibility .65s;
+  transition: opacity var(--duration-base) var(--ease-out), visibility var(--duration-base) var(--ease-out);
 }
+
 .hero-slide.is-active {
   position: relative;
   visibility: visible;
   opacity: 1;
   pointer-events: auto;
 }
-.hero-slide__image,
-.hero-slide__scrim {
+
+.hero-slide__media {
   position: absolute;
   inset: 0;
+  overflow: hidden;
+  background: var(--surface-soft);
+}
+
+.hero-slide__media img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  filter: grayscale(1);
+  opacity: 0;
+  transition: opacity var(--duration-base) var(--ease-out);
 }
-.hero-slide__image { object-fit: cover; object-position: center; }
-.hero-slide__scrim {
-  background:
-    linear-gradient(90deg, rgba(0, 18, 52, .88) 0%, rgba(0, 25, 60, .52) 45%, rgba(0, 25, 60, .08) 100%),
-    linear-gradient(0deg, rgba(0, 18, 52, .78) 0%, transparent 55%);
-  z-index: 1;
+
+.hero-carousel:hover .hero-slide.is-active .hero-slide__media img,
+.hero-carousel:focus-within .hero-slide.is-active .hero-slide__media img {
+  opacity: 0.12;
 }
+
 .hero-slide__content {
   position: relative;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  min-height: inherit;
-  max-width: var(--shell);
-  margin-inline: auto;
-  padding: clamp(8rem, 16vh, 12rem) clamp(1.25rem, 6vw, 5rem) clamp(7rem, 13vh, 9rem);
-}
-.hero-slide__content .tag-on-img { position: static; align-self: flex-start; margin-bottom: 1.25rem; }
-.hero-slide__content .eyebrow { margin-bottom: .65rem; }
-.hero-slide__title {
-  max-width: 16ch;
-  color: #fff;
-  font-size: clamp(2.5rem, 5.6vw, 5rem);
-  line-height: 1.02;
-  letter-spacing: -.035em;
-  text-wrap: balance;
-  margin-bottom: 1rem;
-}
-.hero-slide__title a:hover { color: var(--accent); }
-.hero-slide__dek {
-  max-width: 58ch;
-  margin: 0 0 1.35rem;
-  color: rgba(255, 255, 255, .82);
-  font-size: clamp(1rem, 1.5vw, 1.1875rem);
-  line-height: 1.6;
-}
-.hero-slide__meta { display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap; }
-.hero-slide__meta .meta { color: rgba(255, 255, 255, .72); }
-.hero-slide__meta .meta__name { color: #fff; }
-.hero-slide__meta .meta__dot { background: rgba(255, 255, 255, .4); }
-.hero-slide__meta .stat-inline { color: var(--zest-300); }
-.hero-carousel__controls {
-  position: absolute;
-  z-index: 3;
-  right: clamp(1.25rem, 6vw, 5rem);
-  bottom: clamp(1.5rem, 4vw, 3rem);
-  display: flex;
-  align-items: center;
-  gap: .75rem;
-}
-.hero-carousel__arrow,
-.hero-carousel__dot {
-  border: 1px solid rgba(255, 255, 255, .42);
-  background: rgba(0, 25, 60, .32);
-  color: #fff;
-  transition: background-color .18s var(--ease), border-color .18s var(--ease), transform .18s var(--ease);
-}
-.hero-carousel__arrow {
-  width: 42px;
-  height: 42px;
-  display: grid;
-  place-items: center;
-  border-radius: var(--r-pill);
-  font-size: 1.1rem;
-}
-.hero-carousel__arrow:hover,
-.hero-carousel__arrow:focus-visible { background: var(--accent); border-color: var(--accent); color: var(--zest-900); transform: translateY(-1px); }
-.hero-carousel__dots { display: flex; align-items: center; gap: .45rem; padding-inline: .3rem; }
-.hero-carousel__dot { width: 9px; height: 9px; padding: 0; border-radius: 50%; }
-.hero-carousel__dot:hover,
-.hero-carousel__dot:focus-visible { border-color: var(--accent); }
-.hero-carousel__dot.is-active { width: 28px; border-radius: var(--r-pill); background: var(--accent); border-color: var(--accent); }
-.hero-carousel button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
-
-@media (prefers-reduced-motion: reduce) {
-  .hero-slide { transition: none; }
-}
-
-/* --- Stats strip: one line on every breakpoint --------------------------- */
-.stats {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--gap);
-  padding: 2rem clamp(1.25rem, 4vw, 2.75rem);
-  border-radius: var(--r-lg);
-  background: var(--surface);
-  border: 1px solid var(--line);
-  box-shadow: var(--shadow-card);
-}
-.stat { text-align: center; border-right: 1px solid var(--line); }
-.stat:last-child { border-right: 0; }
-.stat__num {
-  font-size: 2.25rem;
-  font-weight: 750;
-  line-height: 1;
-  letter-spacing: -.04em;
-  color: var(--brand-deep);
-  font-variant-numeric: tabular-nums;
-}
-.stat__num span { color: var(--zest-700); }
-.stat__label {
-  margin-top: .5rem;
-  font-size: var(--step--1);
-  color: var(--text-muted);
-  letter-spacing: .02em;
-}
-
-/* --- Sport section: 5 posts + 1 advert slot in one 3×2 grid -------------- */
-.sport-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gap-lg) var(--gap); }
-
-/* Advert slot occupies the sixth cell and keeps the card silhouette. */
-.advert {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  position: relative;
-  overflow: hidden;
-  min-height: 100%;
-  border-radius: var(--r-lg);
-  border: 1px dashed var(--line-strong);
-  background: var(--surface-grey);
-  padding: 1.25rem;
-  color: #fff;
-}
-.advert img {
-  position: absolute; inset: 0;
-  width: 100%; height: 100%;
-  object-fit: cover;
-}
-.advert::after {
-  content: "";
-  position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(0, 25, 60, .86) 0%, rgba(0, 25, 60, .25) 70%);
-}
-.advert__label {
-  position: absolute;
-  top: .875rem; left: .875rem;
   z-index: 1;
-  padding: .28rem .65rem;
-  border-radius: var(--r-pill);
-  background: rgba(255, 255, 255, .92);
-  color: var(--neutral-700);
-  font-size: .625rem;
-  font-weight: 700;
-  letter-spacing: .14em;
+  display: flex;
+  width: 100%;
+  min-height: inherit;
+  flex-direction: column;
+  justify-content: end;
+  padding: var(--space-12);
+}
+
+.hero-slide__title {
+  max-width: 21ch;
+  color: var(--ink);
+  font-size: var(--text-hero);
+  line-height: 0.98;
   text-transform: uppercase;
 }
-.advert__body { position: relative; z-index: 1; }
-.advert__body strong { display: block; font-size: 1.0625rem; font-weight: 700; letter-spacing: -.02em; }
-.advert__body span { font-size: var(--step--1); color: rgba(255, 255, 255, .76); }
 
-/* --- Race report: wide horizontal card ----------------------------------- */
-.pick {
+.hero-slide__title a:hover {
+  color: var(--brand);
+}
+
+.hero-slide__dek {
+  max-width: 56rem;
+  margin-top: var(--space-4);
+  color: var(--text);
+  font-size: var(--text-md);
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.hero-slide__meta {
+  margin-top: var(--space-4);
+  color: var(--ink);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.hero-carousel__controls {
+  position: absolute;
+  z-index: 2;
+  right: 4.5rem;
+  bottom: 3rem;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  opacity: 0;
+  transition: opacity var(--duration-fast) var(--ease-out);
+}
+
+.hero-carousel:hover .hero-carousel__controls,
+.hero-carousel:focus-within .hero-carousel__controls {
+  opacity: 1;
+}
+
+.hero-carousel__arrow,
+.hero-carousel__dot {
+  border: 0;
+  background: var(--surface-mid);
+  color: var(--ink);
+}
+
+.hero-carousel__arrow {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border-radius: var(--radius-pill);
+  font-size: var(--text-lg);
+  transition: background-color var(--duration-fast) var(--ease-out), color var(--duration-fast) var(--ease-out), transform var(--duration-fast) var(--ease-out);
+}
+
+.hero-carousel__arrow:hover {
+  background: var(--brand);
+  color: var(--surface);
+  transform: translateY(-1px);
+}
+
+.hero-carousel__dots {
+  display: flex;
+  gap: var(--space-2);
+  padding-inline: var(--space-2);
+}
+
+.hero-carousel__dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  padding: 0;
+  border-radius: var(--radius-pill);
+}
+
+.hero-carousel__dot.is-active {
+  width: 2rem;
+  background: var(--brand);
+}
+
+/* Each sport has exactly five editorial cards and one advertising slot. */
+.sport-section {
+  padding-block: var(--space-8) var(--space-12);
+}
+
+.sport-section--grey {
+  background: var(--surface-soft);
+}
+
+.sport-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: var(--space-8);
+  row-gap: var(--space-8);
+}
+
+.advert {
+  display: grid;
+  min-height: 100%;
+  grid-row: span 2;
+  place-items: center;
+  overflow: hidden;
+  border-radius: var(--radius-card);
+  background: var(--surface-soft);
+  color: var(--ink);
+  font-size: var(--text-md);
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: background-color var(--duration-fast) var(--ease-out), transform var(--duration-fast) var(--ease-out);
+}
+
+.advert:hover {
+  background: var(--surface-mid);
+  transform: translateY(-2px);
+}
+
+.advert span {
+  padding: var(--space-4);
+}
+
+/* Product story between sport sections. */
+.promo-band {
+  padding-block: var(--space-12);
+  background: var(--surface-soft);
+}
+
+.promo-card {
+  display: grid;
+  max-width: 1240px;
+  min-height: 23rem;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+  align-items: center;
+  margin-inline: auto;
+  padding: var(--space-8);
+  border-radius: var(--radius-card);
+  background: var(--surface);
+}
+
+.promo-card__media {
+  position: relative;
+  display: block;
+  min-height: 18rem;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  background: var(--surface-soft);
+}
+
+.promo-card__media img {
+  width: 100%;
+  height: 100%;
+  min-height: 18rem;
+  object-fit: cover;
+  filter: grayscale(1);
+  opacity: 0;
+  transition: opacity var(--duration-base) var(--ease-out);
+}
+
+.promo-card__media:hover img,
+.promo-card__media:focus-visible img {
+  opacity: 0.16;
+}
+
+.promo-card__copy {
+  padding-inline: var(--space-4);
+}
+
+.promo-card__title {
+  font-size: clamp(1.25rem, 2vw, 2rem);
+  text-transform: uppercase;
+}
+
+.promo-card__dek {
+  max-width: 34rem;
+  margin-top: var(--space-4);
+  color: var(--text);
+  font-size: var(--text-md);
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.promo-card__dek + .promo-card__dek {
+  margin-top: var(--space-2);
+}
+
+.promo-card__link {
+  display: inline-flex;
+  min-height: 40px;
+  align-items: center;
+  margin-top: var(--space-4);
+  padding-inline: var(--space-6);
+  border-radius: var(--radius-pill);
+  background: var(--surface-soft);
+  color: var(--ink);
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: background-color var(--duration-fast) var(--ease-out), color var(--duration-fast) var(--ease-out), transform var(--duration-fast) var(--ease-out);
+}
+
+.promo-card__link:hover {
+  background: var(--brand);
+  color: var(--surface);
+  transform: translateY(-1px);
+}
+
+/* The final newsletter block mirrors the compact split block in the reference. */
+.newsletter-section {
+  padding-block: var(--space-12);
+}
+
+.newsletter {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--gap-lg);
+  gap: var(--space-8);
   align-items: center;
-  padding: var(--gap-lg);
-  border-radius: var(--r-lg);
-  background: var(--surface);
-  border: 1px solid var(--line);
-}
-.pick__media {
-  position: relative;
-  overflow: hidden;
-  border-radius: var(--r);
-  aspect-ratio: 4 / 3;
-}
-.pick__media img { width: 100%; height: 100%; object-fit: cover; }
-.pick__title { font-size: var(--step-4); margin-block: .7rem .8rem; }
-.pick__dek { margin: 0 0 1.3rem; color: var(--text-muted); font-size: 1.0625rem; }
-.pick__stats {
-  display: flex; gap: 1.5rem; flex-wrap: wrap;
-  padding: 1rem 0 1.25rem;
-  margin-bottom: 1.25rem;
-  border-block: 1px solid var(--line);
-}
-.pick__stat { display: grid; gap: .15rem; }
-.pick__stat dt {
-  font-size: .6875rem; font-weight: 650; letter-spacing: .12em;
-  text-transform: uppercase; color: var(--text-muted);
-}
-.pick__stat dd {
-  margin: 0;
-  font-size: 1.25rem;
-  font-weight: 700;
-  letter-spacing: -.02em;
-  color: var(--brand-deep);
-  font-variant-numeric: tabular-nums;
+  padding: var(--space-8);
+  border-radius: var(--radius-card);
+  background: var(--surface-soft);
 }
 
-/* --- Gear rail: three reviews on the shared grey surface ----------------- */
-.rail { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gap); }
-.gear {
-  display: grid;
-  gap: .85rem;
-  padding: 1.15rem;
-  border-radius: var(--r-lg);
-  background: var(--surface);
-  border: 1px solid var(--line);
-  transition: box-shadow .25s var(--ease), border-color .25s var(--ease);
-}
-.gear:hover { border-color: var(--cobalt-100); box-shadow: var(--shadow-card); }
-.gear__media {
-  border-radius: var(--r);
-  overflow: hidden;
-  aspect-ratio: 3 / 2;
-  background: var(--neutral-100);
-}
-.gear__media img { width: 100%; height: 100%; object-fit: cover; }
-.gear__name { font-size: 1.0625rem; font-weight: 650; line-height: 1.3; letter-spacing: -.02em; color: var(--ink); }
-.gear__meta { display: flex; align-items: center; justify-content: space-between; gap: .5rem; }
-.gear__score {
-  display: inline-flex; align-items: center; gap: .3rem;
-  padding: .2rem .55rem;
-  border-radius: var(--r-sm);
-  background: var(--zest-100);
-  color: var(--zest-900);
-  font-size: var(--step--1);
-  font-weight: 700;
-  font-variant-numeric: tabular-nums;
-}
-.gear__price { font-size: var(--step--1); color: var(--text-muted); font-variant-numeric: tabular-nums; }
-
-/* --- Responsive ---------------------------------------------------------- */
-@media (max-width: 1024px) {
-  .hero-carousel { min-height: min(760px, calc(100svh - 64px)); }
-  .hero-slide__content { padding-inline: clamp(1.25rem, 5vw, 3rem); }
-  .sport-grid, .rail { grid-template-columns: repeat(2, 1fr); }
-  .pick { grid-template-columns: 1fr; }
+.newsletter h2 {
+  font-size: clamp(1.25rem, 2vw, 2rem);
+  text-transform: uppercase;
 }
 
-@media (max-width: 720px) {
-  .hero-carousel { min-height: max(600px, calc(100svh - 64px)); }
-  .hero-slide__content {
-    padding: 7rem 1.25rem 6.5rem;
-    justify-content: flex-end;
+.newsletter p {
+  max-width: 30rem;
+  margin-top: var(--space-3);
+  font-size: var(--text-md);
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.newsletter-form__row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2);
+  border-radius: var(--radius-pill);
+  background: var(--surface-mid);
+}
+
+.newsletter-form__row input {
+  min-width: 0;
+  flex: 1;
+  height: 44px;
+  padding-inline: var(--space-4);
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  font-size: var(--text-sm);
+  text-transform: uppercase;
+}
+
+.newsletter-form__row input:focus {
+  outline: 0;
+}
+
+@media (max-width: 900px) {
+  .hero-carousel {
+    padding-inline: var(--space-6);
   }
-  .hero-slide__image { object-position: 58% center; }
-  .hero-slide__scrim { background: linear-gradient(0deg, rgba(0, 18, 52, .92) 0%, rgba(0, 25, 60, .38) 72%, rgba(0, 25, 60, .12) 100%); }
-  .hero-slide__title { max-width: 14ch; font-size: clamp(2.25rem, 10vw, 3.25rem); }
-  .hero-slide__dek { font-size: .98rem; }
-  .hero-slide__meta { gap: .75rem; }
-  .hero-carousel__controls { right: 1.25rem; bottom: 1.25rem; }
-  .hero-carousel__arrow { width: 38px; height: 38px; }
-  .sport-grid, .rail { grid-template-columns: 1fr; }
-  /* Client asked for the stats to stay on one line on phones too. */
-  .stats { grid-template-columns: repeat(4, 1fr); gap: .5rem; padding: 1.25rem .75rem; }
-  .stat { border-right: 0; }
-  .stat__num { font-size: 1.25rem; letter-spacing: -.05em; }
-  .stat__label { font-size: .625rem; line-height: 1.35; margin-top: .35rem; }
-  .pick { padding: 1.25rem; }
-  .pick__stats { gap: 1rem 1.25rem; }
+
+  .sport-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .promo-card,
+  .newsletter {
+    margin-inline: var(--space-6);
+  }
+}
+
+@media (max-width: 560px) {
+  .hero {
+    padding-bottom: var(--space-6);
+  }
+
+  .hero-carousel {
+    min-height: 32rem;
+    padding-inline: var(--space-4);
+  }
+
+  .hero-slide__content {
+    padding: var(--space-6);
+  }
+
+  .hero-slide__title {
+    max-width: 15ch;
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+
+  .hero-slide__dek {
+    font-size: var(--text-sm);
+  }
+
+  .hero-carousel__controls {
+    right: var(--space-6);
+    bottom: var(--space-6);
+  }
+
+  .sport-section {
+    padding-block: var(--space-6) var(--space-8);
+  }
+
+  .sport-grid {
+    grid-template-columns: 1fr;
+    row-gap: var(--space-6);
+  }
+
+  .advert {
+    min-height: 18rem;
+    grid-row: auto;
+  }
+
+  .promo-band {
+    padding-block: var(--space-8);
+  }
+
+  .promo-card,
+  .newsletter {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+    margin-inline: var(--space-4);
+    padding: var(--space-4);
+  }
+
+  .promo-card__media {
+    min-height: 13rem;
+  }
+
+  .promo-card__media img {
+    min-height: 13rem;
+  }
+
+  .promo-card__copy {
+    padding-inline: var(--space-2);
+  }
+
+  .newsletter-form__row {
+    align-items: stretch;
+    flex-direction: column;
+    border-radius: var(--radius-sm);
+  }
+
+  .newsletter-form__row .btn {
+    width: 100%;
+  }
 }

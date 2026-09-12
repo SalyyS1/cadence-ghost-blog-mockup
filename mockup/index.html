@@ -1,637 +1,326 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cadence — Running, Cycling &amp; Swimming Journal</title>
-<meta name="description" content="Training notes, route guides and honest gear reviews for runners, cyclists and swimmers.">
+<title>Bateson | Running, cycling and swimming</title>
+<meta name="description" content="Race reports, training notes and practical gear stories for people who move.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/tokens.css">
 <link rel="stylesheet" href="assets/css/base.css">
 <link rel="stylesheet" href="assets/css/home.css">
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to content</a>
 
-<!-- ═══ Announcement ═══ -->
-<div class="ann">
-  New: the <strong>Sub-4 Marathon Plan</strong> is live for members —
-  <a href="#subscribe">join the Sunday letter</a>
-</div>
-
-<!-- ═══ Header: brand · search · categories · subscribe ═══ -->
 <header class="site-head">
   <div class="shell site-head__inner">
-    <a class="brand" href="index.html" aria-label="Cadence home">
-      <span class="brand__mark">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#d7fd8c" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="6" cy="18" r="3.2"/><circle cx="18" cy="18" r="3.2"/>
-          <path d="M6 18 10.5 8h4"/><path d="M14 8l4 10"/><path d="M9 8h5"/>
-        </svg>
-      </span>
-      <span class="brand__word">Cad<em>ence</em></span>
+    <a class="brand" href="index.html" aria-label="Bateson home">
+      <span class="brand__word">BATESON</span>
     </a>
-
-    <form class="site-search" role="search" onsubmit="return false">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
-        <circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/>
-      </svg>
-      <label class="sr-only" for="site-search-input">Search posts</label>
-      <input id="site-search-input" type="search" placeholder="Search posts" autocomplete="off">
-    </form>
-
     <div class="head-actions">
-      <button class="icon-btn menu-btn" aria-label="Open categories" aria-expanded="false" aria-controls="category-menu">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
-          <path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/>
-        </svg>
-      </button>
-      <a class="btn btn--primary btn--sm" href="#subscribe">Subscribe</a>
-    </div>
-  </div>
-
-  <!-- Category panel: the three sports plus the reading sections -->
-  <div class="mega" id="category-menu" hidden>
-    <div class="shell mega__grid">
-      <div class="mega__col">
-        <h4>Running</h4>
-        <ul>
-          <li><a href="#running">Road running</a></li>
-          <li><a href="#running">Trail &amp; ultra</a></li>
-          <li><a href="#running">Race reports</a></li>
-          <li><a href="#running">Injury &amp; recovery</a></li>
-        </ul>
-      </div>
-      <div class="mega__col">
-        <h4>Cycling</h4>
-        <ul>
-          <li><a href="#cycling">Road cycling</a></li>
-          <li><a href="#cycling">Gravel &amp; bikepacking</a></li>
-          <li><a href="#cycling">Indoor training</a></li>
-          <li><a href="#cycling">Routes</a></li>
-        </ul>
-      </div>
-      <div class="mega__col">
-        <h4>Swimming</h4>
-        <ul>
-          <li><a href="#swimming">Pool sessions</a></li>
-          <li><a href="#swimming">Open water</a></li>
-          <li><a href="#swimming">Technique</a></li>
-          <li><a href="#swimming">Triathlon</a></li>
-        </ul>
-      </div>
-      <div class="mega__col">
-        <h4>More</h4>
-        <ul>
-          <li><a href="#race-report">Race report</a></li>
-          <li><a href="#gear">Gear reviews</a></li>
-          <li><a href="article.html">Latest article</a></li>
-          <li><a href="#subscribe">Newsletter</a></li>
-        </ul>
-      </div>
+      <a class="btn btn--small" href="#subscribe">Subscribe</a>
     </div>
   </div>
 </header>
 
-<main>
-<!-- ═══ Full-bleed featured carousel ═══ -->
-<section class="hero" aria-label="Featured stories">
-  <div class="hero-carousel" data-carousel tabindex="0" aria-roledescription="carousel" aria-label="Featured Cadence stories">
-    <div class="hero-carousel__viewport">
-      <article class="hero-slide is-active" data-slide aria-roledescription="slide" aria-label="1 of 4">
-        <img class="hero-slide__image" src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=2000&amp;h=1400&amp;fit=crop&amp;q=85" alt="Three runners silhouetted against a blue dawn sky on an empty road">
-        <div class="hero-slide__scrim"></div>
-        <div class="hero-slide__content">
-          <span class="tag-on-img tag-on-img--accent">Running</span>
-          <span class="eyebrow eyebrow--light">Featured this week</span>
-          <h1 class="hero-slide__title"><a data-slide-link href="article.html">The 5AM Argument: Why Easy Runs Should Feel Boring</a></h1>
-          <p class="hero-slide__dek">Eight weeks of running slower than felt reasonable — and the 4:12 half marathon that came out the other side. Here's the heart-rate data, the doubts, and what I'd do differently.</p>
-          <div class="hero-slide__meta">
-            <div class="meta"><img class="meta__avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&amp;h=80&amp;fit=crop" alt=""><span class="meta__name">Mara Ellison</span><span class="meta__dot"></span><span>8 min read</span><span class="meta__dot"></span><span>Mar 4, 2026</span></div>
-            <span class="stat-inline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 17l5-7 4 4 4-6 5 5"/></svg>21.1 km · 4:12:00</span>
+<main id="main-content">
+  <section class="hero" aria-label="Featured story">
+    <div class="hero-carousel" data-carousel tabindex="0" aria-roledescription="carousel" aria-label="Featured Bateson stories">
+      <div class="hero-carousel__viewport">
+        <article class="hero-slide is-active" data-slide aria-roledescription="slide" aria-label="1 of 3">
+          <div class="hero-slide__media" aria-hidden="true">
+            <img src="assets/media/placeholder.svg" alt="">
           </div>
+          <div class="hero-slide__content">
+            <h1 class="hero-slide__title"><a data-slide-link href="article.html">London Marathon 2026</a></h1>
+            <p class="hero-slide__dek">The course, the pacing plan and the small decisions that shape race day.</p>
+            <p class="hero-slide__meta">Thomas Bateson | 01 January 2026</p>
+          </div>
+        </article>
+
+        <article class="hero-slide" data-slide aria-roledescription="slide" aria-label="2 of 3" aria-hidden="true">
+          <div class="hero-slide__media" aria-hidden="true">
+            <img src="assets/media/placeholder.svg" alt="">
+          </div>
+          <div class="hero-slide__content">
+            <h2 class="hero-slide__title"><a data-slide-link href="article.html">The Easy Run Project</a></h2>
+            <p class="hero-slide__dek">Eight weeks of slower miles, clearer data and a stronger finish.</p>
+            <p class="hero-slide__meta">Mara Ellison | 18 December 2025</p>
+          </div>
+        </article>
+
+        <article class="hero-slide" data-slide aria-roledescription="slide" aria-label="3 of 3" aria-hidden="true">
+          <div class="hero-slide__media" aria-hidden="true">
+            <img src="assets/media/placeholder.svg" alt="">
+          </div>
+          <div class="hero-slide__content">
+            <h2 class="hero-slide__title"><a data-slide-link href="article.html">A Better Day on Two Wheels</a></h2>
+            <p class="hero-slide__dek">What changes when the ride is planned around the people, not the average speed.</p>
+            <p class="hero-slide__meta">Tom Reyes | 03 December 2025</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="hero-carousel__controls" aria-label="Featured story controls">
+        <button class="hero-carousel__arrow" type="button" data-prev aria-label="Previous story">&#8592;</button>
+        <div class="hero-carousel__dots" role="tablist" aria-label="Featured stories">
+          <button class="hero-carousel__dot is-active" type="button" data-dot="0" role="tab" aria-selected="true" aria-label="Show story 1 of 3"></button>
+          <button class="hero-carousel__dot" type="button" data-dot="1" role="tab" aria-selected="false" aria-label="Show story 2 of 3"></button>
+          <button class="hero-carousel__dot" type="button" data-dot="2" role="tab" aria-selected="false" aria-label="Show story 3 of 3"></button>
+        </div>
+        <button class="hero-carousel__arrow" type="button" data-next aria-label="Next story">&#8594;</button>
+      </div>
+      <p class="sr-only" data-status aria-live="polite">Showing story 1 of 3: London Marathon 2026</p>
+    </div>
+  </section>
+
+  <section class="sport-section" id="running">
+    <div class="shell">
+      <header class="section-head">
+        <div>
+          <h2>Running</h2>
+          <p>Race reports, training and the miles between.</p>
+        </div>
+        <a class="section-head__action" href="article.html">Read more</a>
+      </header>
+
+      <div class="sport-grid">
+        <article class="post-card">
+          <a class="post-card__media" href="article.html"><img loading="lazy" width="700" height="412" src="assets/media/placeholder.svg" alt="Runner climbing stone steps"><span class="post-card__tag">Training</span></a>
+          <h3 class="post-card__title"><a href="article.html">Madrid Marathon 2026</a></h3>
+          <p class="post-card__dek">A steady build, a warm course and a patient second half.</p>
+          <p class="post-card__meta">Thomas Bateson | 01 January 2026</p>
+        </article>
+        <article class="post-card">
+          <a class="post-card__media" href="article.html"><img loading="lazy" width="700" height="412" src="assets/media/placeholder.svg" alt="Runner moving along a road"><span class="post-card__tag">Race report</span></a>
+          <h3 class="post-card__title"><a href="article.html">Barcelona Marathon 2026</a></h3>
+          <p class="post-card__dek">Where the route turns hard and the plan has to flex.</p>
+          <p class="post-card__meta">Thomas Bateson | 01 January 2026</p>
+        </article>
+        <article class="post-card">
+          <a class="post-card__media" href="article.html"><img loading="lazy" width="700" height="412" src="assets/media/placeholder.svg" alt="Trail runner on an open path"><span class="post-card__tag">Road running</span></a>
+          <h3 class="post-card__title"><a href="article.html">Seville Marathon 2026</a></h3>
+          <p class="post-card__dek">Fast roads, quiet focus and a finish built from small gains.</p>
+          <p class="post-card__meta">Thomas Bateson | 01 January 2026</p>
+        </article>
+        <article class="post-card">
+          <a class="post-card__media" href="article.html"><img loading="lazy" width="700" height="412" src="assets/media/placeholder.svg" alt="Runner on a wet road at dusk"><span class="post-card__tag">Pacing</span></a>
+          <h3 class="post-card__title"><a href="article.html">Valencia Marathon 2026</a></h3>
+          <p class="post-card__dek">The long run that taught me to leave something in reserve.</p>
+          <p class="post-card__meta">Thomas Bateson | 01 January 2026</p>
+        </article>
+        <article class="post-card">
+          <a class="post-card__media" href="article.html"><img loading="lazy" width="700" height="412" src="assets/media/placeholder.svg" alt="Marathon runners on a city avenue"><span class="post-card__tag">Race report</span></a>
+          <h3 class="post-card__title"><a href="article.html">San Sebastian Marathon 2026</a></h3>
+          <p class="post-card__dek">A coastal race, a late push and the best kind of tired.</p>
+          <p class="post-card__meta">Thomas Bateson | 01 January 2026</p>
+        </article>
+        <a class="advert" href="#subscribe" aria-label="Advertising opportunity"><span>Advert</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="promo-band" aria-label="Featured running product">
+    <div class="shell">
+      <article class="promo-card">
+        <a class="promo-card__media" href="article.html"><img loading="lazy" width="700" height="500" src="assets/media/placeholder.svg" alt="Running shoe product detail"></a>
+        <div class="promo-card__copy">
+          <h2 class="promo-card__title">Adidas Evo SL</h2>
+          <p class="promo-card__dek">A light daily trainer for runners who want a little more speed without giving up the easy miles.</p>
+          <a class="promo-card__link" href="article.html">Read more</a>
         </div>
       </article>
+    </div>
+  </section>
 
-      <article class="hero-slide" data-slide aria-roledescription="slide" aria-label="2 of 4" aria-hidden="true">
-        <img class="hero-slide__image" src="https://images.unsplash.com/photo-1517649763962-0c623066013b?w=2000&amp;h=1400&amp;fit=crop&amp;q=85" alt="A tight peloton of cyclists racing on an open road">
-        <div class="hero-slide__scrim"></div>
-        <div class="hero-slide__content">
-          <span class="tag-on-img">Cycling</span>
-          <span class="eyebrow eyebrow--light">Featured this week</span>
-          <h2 class="hero-slide__title"><a data-slide-link href="article.html">Holding a Wheel at 42 km/h Without Panicking</a></h2>
-          <p class="hero-slide__dek">Group-ride etiquette nobody explains until you've already been shouted at once.</p>
-          <div class="hero-slide__meta"><div class="meta"><img class="meta__avatar" src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=80&amp;h=80&amp;fit=crop" alt=""><span class="meta__name">Tom Reyes</span><span class="meta__dot"></span><span>6 min read</span></div><span class="stat-inline">42 km/h · Group ride</span></div>
+  <section class="sport-section" id="cycling">
+    <div class="shell">
+      <header class="section-head">
+        <div>
+          <h2>Cycling</h2>
+          <p>Road, gravel and routes worth riding.</p>
+        </div>
+        <a class="section-head__action" href="article.html">Read more</a>
+      </header>
+
+      <div class="sport-grid">
+        <article class="post-card">
+          <a class="post-card__media" href="article.html"><img loading="lazy" width="700" height="412" src="assets/media/placeholder.svg" alt="Cyclists riding together"><span class="post-card__tag">Road cycling</span></a>
+          <h3 class="post-card__title"><a href="article.html">Mallorca Classic 2026</a></h3>
+          <p class="post-card__dek">A first climb, a patient group and the right gear for a long day.</p>
+          <p class="post-card__meta">Thomas Bateson | 01 January 2026</p>
+        </article>
+        <article class="post-card">
+          <a class="post-card__media" href="article.html"><img loading="lazy" width="700" height="412" src="assets/media/placeholder.svg" alt="Cyclist on a coastal road"><span class="post-card__tag">Routes</span></a>
+          <h3 class="post-card__title"><a href="article.html">Barcelona Gran Fondo 2026</a></h3>
+          <p class="post-card__dek">Wind direction, three café stops and one climb worth saving for.</p>
+          <p class="post-card__meta">Thomas Bateson | 01 January 2026</p>
+        </article>
+        <article class="post-card">
+          <a class="post-card__media" href="article.html"><img loading="lazy" width="700" height="412" src="assets/media/placeholder.svg" alt="Cyclist with a bike on a ridge"><span class="post-card__tag">Bikepacking</span></a>
+          <h3 class="post-card__title"><a href="article.html">Seville Circuit 2026</a></h3>
+          <p class="post-card__dek">A compact frame bag, a long road and a better way to carry less.</p>
+          <p class="post-card__meta">Thomas Bateson | 01 January 2026</p>
+        </article>
+        <article class="post-card">
+          <a class="post-card__media" href="article.html"><img loading="lazy" width="700" height="412" src="assets/media/placeholder.svg" alt="Cyclist on a country road"><span class="post-card__tag">Training</span></a>
+          <h3 class="post-card__title"><a href="article.html">Valencia Time Trial 2026</a></h3>
+          <p class="post-card__dek">The simple indoor session that made the outside miles feel easier.</p>
+          <p class="post-card__meta">Thomas Bateson | 01 January 2026</p>
+        </article>
+        <article class="post-card">
+          <a class="post-card__media" href="article.html"><img loading="lazy" width="700" height="412" src="assets/media/placeholder.svg" alt="Road bicycle against a wall"><span class="post-card__tag">Maintenance</span></a>
+          <h3 class="post-card__title"><a href="article.html">San Sebastian Classic 2026</a></h3>
+          <p class="post-card__dek">The ten-minute check that keeps a good ride from ending early.</p>
+          <p class="post-card__meta">Thomas Bateson | 01 January 2026</p>
+        </article>
+        <a class="advert" href="#subscribe" aria-label="Advertising opportunity"><span>Advert</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="promo-band" aria-label="Featured cycling product">
+    <div class="shell">
+      <article class="promo-card">
+        <a class="promo-card__media" href="article.html"><img loading="lazy" width="700" height="500" src="assets/media/placeholder.svg" alt="Endurance road bicycle detail"></a>
+        <div class="promo-card__copy">
+          <h2 class="promo-card__title">Canyon Endurance CF</h2>
+          <p class="promo-card__dek">A long-distance build with a calm ride, sensible contact points and enough speed for the return home.</p>
+          <a class="promo-card__link" href="article.html">Read more</a>
         </div>
       </article>
+    </div>
+  </section>
 
-      <article class="hero-slide" data-slide aria-roledescription="slide" aria-label="3 of 4" aria-hidden="true">
-        <img class="hero-slide__image" src="https://images.unsplash.com/photo-1530549387789-4c1017266635?w=2000&amp;h=1400&amp;fit=crop&amp;q=85" alt="A swimmer mid-butterfly stroke in a blue outdoor pool lane">
-        <div class="hero-slide__scrim"></div>
-        <div class="hero-slide__content">
-          <span class="tag-on-img">Swimming</span>
-          <span class="eyebrow eyebrow--light">Featured this week</span>
-          <h2 class="hero-slide__title"><a data-slide-link href="article.html">Learning to Breathe Bilaterally at 38</a></h2>
-          <p class="hero-slide__dek">Six weeks of drills, one very patient coach, and the stroke fault I'd been repeating for a decade.</p>
-          <div class="hero-slide__meta"><div class="meta"><img class="meta__avatar" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&amp;h=80&amp;fit=crop" alt=""><span class="meta__name">Dr. Ada Nkemi</span><span class="meta__dot"></span><span>7 min read</span></div><span class="stat-inline">2.4 km · Pool set</span></div>
+  <section class="sport-section" id="swimming">
+    <div class="shell">
+      <header class="section-head">
+        <div>
+          <h2>Swimming</h2>
+          <p>Pool sessions, open water and better technique.</p>
         </div>
-      </article>
+        <a class="section-head__action" href="article.html">Read more</a>
+      </header>
 
-      <article class="hero-slide" data-slide aria-roledescription="slide" aria-label="4 of 4" aria-hidden="true">
-        <img class="hero-slide__image" src="https://images.unsplash.com/photo-1452626038306-9aae5e071dd3?w=2000&amp;h=1400&amp;fit=crop&amp;q=85" alt="Thousands of runners filling a tree-lined city avenue at the start of a marathon">
-        <div class="hero-slide__scrim"></div>
-        <div class="hero-slide__content">
-          <span class="tag-on-img tag-on-img--accent">Race report</span>
-          <span class="eyebrow eyebrow--light">Featured this week</span>
-          <h2 class="hero-slide__title"><a data-slide-link href="article.html">Negative Split or Bust</a></h2>
-          <p class="hero-slide__dek">I went through halfway 90 seconds slower than goal pace on purpose. Here's the second half — and the last 5 km where it nearly came apart.</p>
-          <div class="hero-slide__meta"><div class="meta"><span class="meta__name">Mara Ellison</span><span class="meta__dot"></span><span>10 min read</span><span class="meta__dot"></span><span>Feb 22, 2026</span></div><span class="stat-inline">42.2 km · 3:28:41</span></div>
-        </div>
-      </article>
-    </div>
-
-    <div class="hero-carousel__controls">
-      <button class="hero-carousel__arrow" type="button" data-prev aria-label="Previous featured story"><span aria-hidden="true">←</span></button>
-      <div class="hero-carousel__dots" role="tablist" aria-label="Featured stories">
-        <button class="hero-carousel__dot is-active" type="button" data-dot="0" role="tab" aria-selected="true" aria-label="Show story 1 of 4"></button>
-        <button class="hero-carousel__dot" type="button" data-dot="1" role="tab" aria-selected="false" aria-label="Show story 2 of 4"></button>
-        <button class="hero-carousel__dot" type="button" data-dot="2" role="tab" aria-selected="false" aria-label="Show story 3 of 4"></button>
-        <button class="hero-carousel__dot" type="button" data-dot="3" role="tab" aria-selected="false" aria-label="Show story 4 of 4"></button>
+      <div class="sport-grid">
+        <article class="post-card">
+          <a class="post-card__media" href="article.html"><img loading="lazy" width="700" height="412" src="assets/media/placeholder.svg" alt="Swimmer in a pool"><span class="post-card__tag">Technique</span></a>
+          <h3 class="post-card__title"><a href="article.html">Madrid Swim Meet 2026</a></h3>
+          <p class="post-card__dek">Breathing drills that made the final hundred metres feel manageable.</p>
+          <p class="post-card__meta">Thomas Bateson | 01 January 2026</p>
+        </article>
+        <article class="post-card">
+          <a class="post-card__media" href="article.html"><img loading="lazy" width="700" height="412" src="assets/media/placeholder.svg" alt="Swimmer between lane ropes"><span class="post-card__tag">Pool</span></a>
+          <h3 class="post-card__title"><a href="article.html">Barcelona Open 2026</a></h3>
+          <p class="post-card__dek">A 3,000 metre set, a pace clock and one useful change in rhythm.</p>
+          <p class="post-card__meta">Thomas Bateson | 01 January 2026</p>
+        </article>
+        <article class="post-card">
+          <a class="post-card__media" href="article.html"><img loading="lazy" width="700" height="412" src="assets/media/placeholder.svg" alt="Open water at sunrise"><span class="post-card__tag">Open water</span></a>
+          <h3 class="post-card__title"><a href="article.html">Seville Open Water 2026</a></h3>
+          <p class="post-card__dek">Cold water, sighting practice and a steadier line through the swell.</p>
+          <p class="post-card__meta">Thomas Bateson | 01 January 2026</p>
+        </article>
+        <article class="post-card">
+          <a class="post-card__media" href="article.html"><img loading="lazy" width="700" height="412" src="assets/media/placeholder.svg" alt="Swimmer diving into a pool"><span class="post-card__tag">Triathlon</span></a>
+          <h3 class="post-card__title"><a href="article.html">Valencia Tri Swim 2026</a></h3>
+          <p class="post-card__dek">Leaving the water with legs that still work and a transition under two minutes.</p>
+          <p class="post-card__meta">Thomas Bateson | 01 January 2026</p>
+        </article>
+        <article class="post-card">
+          <a class="post-card__media" href="article.html"><img loading="lazy" width="700" height="412" src="assets/media/placeholder.svg" alt="Swimmers training in marked lanes"><span class="post-card__tag">Recovery</span></a>
+          <h3 class="post-card__title"><a href="article.html">San Sebastian Swim 2026</a></h3>
+          <p class="post-card__dek">How an easy session can build a stronger base when the effort stays honest.</p>
+          <p class="post-card__meta">Thomas Bateson | 01 January 2026</p>
+        </article>
+        <a class="advert" href="#subscribe" aria-label="Advertising opportunity"><span>Advert</span></a>
       </div>
-      <button class="hero-carousel__arrow" type="button" data-next aria-label="Next featured story"><span aria-hidden="true">→</span></button>
     </div>
-    <p class="sr-only" data-status aria-live="polite">Showing story 1 of 4: The 5AM Argument: Why Easy Runs Should Feel Boring</p>
-  </div>
-</section>
+  </section>
 
-<!-- ═══ Stats strip ═══ -->
-<section class="shell band--tight">
-  <div class="stats">
-    <div class="stat">
-      <div class="stat__num">4,820<span>km</span></div>
-      <div class="stat__label">Logged &amp; written about in 2025</div>
-    </div>
-    <div class="stat">
-      <div class="stat__num">147</div>
-      <div class="stat__label">Long-form articles published</div>
-    </div>
-    <div class="stat">
-      <div class="stat__num">61</div>
-      <div class="stat__label">Shoes and bikes tested</div>
-    </div>
-    <div class="stat">
-      <div class="stat__num">12<span>k</span></div>
-      <div class="stat__label">Runners on the Sunday letter</div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ Running ═══ -->
-<section class="shell band" id="running">
-  <div class="sec-head">
-    <div>
-      <span class="eyebrow">The journal</span>
-      <h2 class="sec-head__title">Running</h2>
-      <p class="sec-head__sub">Road, trail and the training blocks in between.</p>
-    </div>
-    <a class="sec-head__link" href="#">All running posts →</a>
-  </div>
-
-  <div class="sport-grid">
-    <article class="card">
-      <a class="card__media" href="article.html">
-        <img src="https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=700&amp;h=467&amp;fit=crop&amp;q=75" alt="Runner&#39;s legs climbing stone steps in orange trainers">
-        <span class="tag-on-img">Training</span>
-      </a>
-      <h3 class="card__title"><a href="article.html">Hill Reps Are Speedwork in Disguise</a></h3>
-      <p class="card__dek">Six weeks of Tuesday hills, one honest look at whether the 5K time actually moved.</p>
-      <div class="meta">
-        <img class="meta__avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&amp;h=80&amp;fit=crop" alt="">
-        <span class="meta__name">Mara Ellison</span><span class="meta__dot"></span><span>7 min read</span>
-      </div>
-    </article>
-
-    <article class="card">
-      <a class="card__media" href="article.html">
-        <img src="https://images.unsplash.com/photo-1571008887538-b36bb32f4571?w=700&amp;h=467&amp;fit=crop&amp;q=75" alt="Close crop of a runner mid-stride on grey asphalt">
-        <span class="tag-on-img">Injury</span>
-      </a>
-      <h3 class="card__title"><a href="article.html">Shin Splints: What Finally Worked</a></h3>
-      <p class="card__dek">Four months off, two physios, and the cadence change that mattered most.</p>
-      <div class="meta">
-        <img class="meta__avatar" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&amp;h=80&amp;fit=crop" alt="">
-        <span class="meta__name">Dr. Ada Nkemi</span><span class="meta__dot"></span><span>8 min read</span>
-      </div>
-    </article>
-
-    <article class="card">
-      <a class="card__media" href="article.html">
-        <img src="https://images.unsplash.com/photo-1486218119243-13883505764c?w=700&amp;h=467&amp;fit=crop&amp;q=75" alt="Trail runner on a narrow path through open moorland">
-        <span class="tag-on-img">Trail</span>
-      </a>
-      <h3 class="card__title"><a href="article.html">Fifty Kilometres of Mud and Bad Decisions</a></h3>
-      <p class="card__dek">My first ultra went wrong in four separate ways. Three were avoidable.</p>
-      <div class="meta">
-        <img class="meta__avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&amp;h=80&amp;fit=crop" alt="">
-        <span class="meta__name">Jonas Bright</span><span class="meta__dot"></span><span>12 min read</span>
-      </div>
-    </article>
-
-    <article class="card">
-      <a class="card__media" href="article.html">
-        <img src="https://images.unsplash.com/photo-1502224562085-639556652f33?w=700&amp;h=467&amp;fit=crop&amp;q=75" alt="A lone runner on a wet road at dusk">
-        <span class="tag-on-img">Training</span>
-      </a>
-      <h3 class="card__title"><a href="article.html">The Long Run Is Not a Time Trial</a></h3>
-      <p class="card__dek">Why the Sunday run should be the easiest hard thing you do all week.</p>
-      <div class="meta">
-        <img class="meta__avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&amp;h=80&amp;fit=crop" alt="">
-        <span class="meta__name">Mara Ellison</span><span class="meta__dot"></span><span>9 min read</span>
-      </div>
-    </article>
-
-    <article class="card">
-      <a class="card__media" href="article.html">
-        <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=700&amp;h=467&amp;fit=crop&amp;q=75" alt="Overhead shot of a breakfast bowl with egg, avocado and greens">
-        <span class="tag-on-img">Nutrition</span>
-      </a>
-      <h3 class="card__title"><a href="article.html">The Boring Breakfast That Fixed My Long Runs</a></h3>
-      <p class="card__dek">Carbs, timing, and the unglamorous truth about gut training before race day.</p>
-      <div class="meta">
-        <img class="meta__avatar" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&amp;h=80&amp;fit=crop" alt="">
-        <span class="meta__name">Dr. Ada Nkemi</span><span class="meta__dot"></span><span>9 min read</span>
-      </div>
-    </article>
-
-    <!-- Sixth slot reserved for a sponsor placement, per client feedback -->
-    <aside class="advert" aria-label="Advertisement">
-      <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=700&amp;h=700&amp;fit=crop&amp;q=75" alt="Red running shoe on a red background">
-      <span class="advert__label">Advert</span>
-      <div class="advert__body">
-        <strong>Velo Flux 4 — now in store</strong>
-        <span>Sponsor placement · 600 × 600</span>
-      </div>
-    </aside>
-  </div>
-</section>
-
-<!-- ═══ Cycling ═══ -->
-<section class="band band--alt" id="cycling">
-  <div class="shell">
-    <div class="sec-head">
+  <section class="newsletter-section shell" id="subscribe">
+    <div class="newsletter">
       <div>
-        <span class="eyebrow">The journal</span>
-        <h2 class="sec-head__title">Cycling</h2>
-        <p class="sec-head__sub">Road, gravel and the turbo sessions that keep winter honest.</p>
+        <h2>Subscribe to our newsletter</h2>
+        <p>One useful email with new stories, race notes and gear we would use ourselves.</p>
       </div>
-      <a class="sec-head__link" href="#">All cycling posts →</a>
-    </div>
-
-    <div class="sport-grid">
-      <article class="card">
-        <a class="card__media" href="article.html">
-          <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?w=700&amp;h=467&amp;fit=crop&amp;q=75" alt="A tight peloton of cyclists racing on an open road">
-          <span class="tag-on-img">Group riding</span>
-        </a>
-        <h3 class="card__title"><a href="article.html">Holding a Wheel at 42 km/h Without Panicking</a></h3>
-        <p class="card__dek">Group-ride etiquette nobody explains until you've already been shouted at once.</p>
-        <div class="meta">
-          <img class="meta__avatar" src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=80&amp;h=80&amp;fit=crop" alt="">
-          <span class="meta__name">Tom Reyes</span><span class="meta__dot"></span><span>6 min read</span>
+      <form class="newsletter-form" data-newsletter-form novalidate>
+        <div class="newsletter-form__row">
+          <label class="sr-only" for="newsletter-email">Email address</label>
+          <input id="newsletter-email" name="email" type="email" autocomplete="email" placeholder="Email address" required>
+          <button class="btn btn--small" type="submit">Subscribe</button>
         </div>
-      </article>
-
-      <article class="card">
-        <a class="card__media" href="article.html">
-          <img src="https://images.unsplash.com/photo-1541625602330-2277a4c46182?w=700&amp;h=467&amp;fit=crop&amp;q=75" alt="Two cyclists riding a coastal road beside dunes">
-          <span class="tag-on-img">Routes</span>
-        </a>
-        <h3 class="card__title"><a href="article.html">A 120 km Coastal Loop You Can Ride Solo</a></h3>
-        <p class="card__dek">Wind direction, three café stops, and the one climb worth saving your legs for.</p>
-        <div class="meta">
-          <img class="meta__avatar" src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=80&amp;h=80&amp;fit=crop" alt="">
-          <span class="meta__name">Tom Reyes</span><span class="meta__dot"></span><span>11 min read</span>
-        </div>
-      </article>
-
-      <article class="card">
-        <a class="card__media" href="article.html">
-          <img src="https://images.unsplash.com/photo-1533107862482-0e6974b06ec4?w=700&amp;h=467&amp;fit=crop&amp;q=75" alt="Cyclist standing with a bike on a rocky ridge above green hills">
-          <span class="tag-on-img">Bikepacking</span>
-        </a>
-        <h3 class="card__title"><a href="article.html">Three Days on the Ridge With One Frame Bag</a></h3>
-        <p class="card__dek">Bikepacking light enough to climb, heavy enough to sleep. The full kit list.</p>
-        <div class="meta">
-          <img class="meta__avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&amp;h=80&amp;fit=crop" alt="">
-          <span class="meta__name">Mara Ellison</span><span class="meta__dot"></span><span>10 min read</span>
-        </div>
-      </article>
-
-      <article class="card">
-        <a class="card__media" href="article.html">
-          <img src="https://images.unsplash.com/photo-1534787238916-9ba6764efd4f?w=700&amp;h=467&amp;fit=crop&amp;q=75" alt="Cyclist riding fast on a country road at golden hour">
-          <span class="tag-on-img">Indoor</span>
-        </a>
-        <h3 class="card__title"><a href="article.html">Zwift Racing Made Me a Worse Climber</a></h3>
-        <p class="card__dek">Twelve weeks of flat-out virtual crits, and what it cost my long-climb legs.</p>
-        <div class="meta">
-          <img class="meta__avatar" src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=80&amp;h=80&amp;fit=crop" alt="">
-          <span class="meta__name">Tom Reyes</span><span class="meta__dot"></span><span>8 min read</span>
-        </div>
-      </article>
-
-      <article class="card">
-        <a class="card__media" href="article.html">
-          <img src="https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=700&amp;h=467&amp;fit=crop&amp;q=75" alt="Silver road bicycle against a white wall">
-          <span class="tag-on-img">Maintenance</span>
-        </a>
-        <h3 class="card__title"><a href="article.html">The Ten-Minute Pre-Ride Check</a></h3>
-        <p class="card__dek">Everything that has ever ended a ride early, and how to catch it in the hallway.</p>
-        <div class="meta">
-          <img class="meta__avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&amp;h=80&amp;fit=crop" alt="">
-          <span class="meta__name">Jonas Bright</span><span class="meta__dot"></span><span>5 min read</span>
-        </div>
-      </article>
-
-      <aside class="advert" aria-label="Advertisement">
-        <img src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=700&amp;h=700&amp;fit=crop&amp;q=75" alt="Road bike leaning against a wall in warm evening light">
-        <span class="advert__label">Advert</span>
-        <div class="advert__body">
-          <strong>Northline AR2 — 2026 build</strong>
-          <span>Sponsor placement · 600 × 600</span>
-        </div>
-      </aside>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ Swimming ═══ -->
-<section class="shell band" id="swimming">
-  <div class="sec-head">
-    <div>
-      <span class="eyebrow">The journal</span>
-      <h2 class="sec-head__title">Swimming</h2>
-      <p class="sec-head__sub">Pool sets, open water, and learning a stroke you thought you had.</p>
-    </div>
-    <a class="sec-head__link" href="#">All swimming posts →</a>
-  </div>
-
-  <div class="sport-grid">
-    <article class="card">
-      <a class="card__media" href="article.html">
-        <img src="https://images.unsplash.com/photo-1530549387789-4c1017266635?w=700&amp;h=467&amp;fit=crop&amp;q=75" alt="A swimmer mid-butterfly stroke in a blue outdoor pool lane">
-        <span class="tag-on-img">Technique</span>
-      </a>
-      <h3 class="card__title"><a href="article.html">Learning to Breathe Bilaterally at 38</a></h3>
-      <p class="card__dek">Six weeks of drills, one patient coach, and the stroke fault I'd repeated for a decade.</p>
-      <div class="meta">
-        <img class="meta__avatar" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&amp;h=80&amp;fit=crop" alt="">
-        <span class="meta__name">Dr. Ada Nkemi</span><span class="meta__dot"></span><span>7 min read</span>
-      </div>
-    </article>
-
-    <article class="card">
-      <a class="card__media" href="article.html">
-        <img src="https://images.unsplash.com/photo-1519315901367-f34ff9154487?w=700&amp;h=467&amp;fit=crop&amp;q=75" alt="Swimmer front-crawling between blue lane ropes">
-        <span class="tag-on-img">Pool</span>
-      </a>
-      <h3 class="card__title"><a href="article.html">The 3,000 m Set That Fixed My Pacing</a></h3>
-      <p class="card__dek">Descending 200s, a pace clock, and the first time my last rep was my fastest.</p>
-      <div class="meta">
-        <img class="meta__avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&amp;h=80&amp;fit=crop" alt="">
-        <span class="meta__name">Mara Ellison</span><span class="meta__dot"></span><span>6 min read</span>
-      </div>
-    </article>
-
-    <article class="card">
-      <a class="card__media" href="article.html">
-        <img src="https://images.unsplash.com/photo-1439405326854-014607f694d7?w=700&amp;h=467&amp;fit=crop&amp;q=75" alt="Open sea water at sunrise with low cloud on the horizon">
-        <span class="tag-on-img">Open water</span>
-      </a>
-      <h3 class="card__title"><a href="article.html">Your First Open-Water Swim Will Feel Wrong</a></h3>
-      <p class="card__dek">Cold shock, no black line, and sighting every six strokes without losing rhythm.</p>
-      <div class="meta">
-        <img class="meta__avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&amp;h=80&amp;fit=crop" alt="">
-        <span class="meta__name">Jonas Bright</span><span class="meta__dot"></span><span>9 min read</span>
-      </div>
-    </article>
-
-    <article class="card">
-      <a class="card__media" href="article.html">
-        <img src="https://images.unsplash.com/photo-1600965962361-9035dbfd1c50?w=700&amp;h=467&amp;fit=crop&amp;q=75" alt="Swimmer diving from the blocks into a clear pool">
-        <span class="tag-on-img">Triathlon</span>
-      </a>
-      <h3 class="card__title"><a href="article.html">Swim-Bike Bricks Nobody Enjoys</a></h3>
-      <p class="card__dek">How to leave the water with legs that still work — and a transition under two minutes.</p>
-      <div class="meta">
-        <img class="meta__avatar" src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=80&amp;h=80&amp;fit=crop" alt="">
-        <span class="meta__name">Tom Reyes</span><span class="meta__dot"></span><span>10 min read</span>
-      </div>
-    </article>
-
-    <article class="card">
-      <a class="card__media" href="article.html">
-        <img src="https://images.unsplash.com/photo-1560090995-01632a28895b?w=700&amp;h=467&amp;fit=crop&amp;q=75" alt="Swimmers training in marked lanes seen from above">
-        <span class="tag-on-img">Recovery</span>
-      </a>
-      <h3 class="card__title"><a href="article.html">Swimming as the Easy Day That Isn't</a></h3>
-      <p class="card__dek">Cross-training that helps a runner's aerobic base — when you keep the effort honest.</p>
-      <div class="meta">
-        <img class="meta__avatar" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&amp;h=80&amp;fit=crop" alt="">
-        <span class="meta__name">Dr. Ada Nkemi</span><span class="meta__dot"></span><span>8 min read</span>
-      </div>
-    </article>
-
-    <aside class="advert" aria-label="Advertisement">
-      <img src="https://images.unsplash.com/photo-1600965962102-9d260a71890d?w=700&amp;h=700&amp;fit=crop&amp;q=75" alt="Swimmer mid butterfly stroke in a pool">
-      <span class="advert__label">Advert</span>
-      <div class="advert__body">
-        <strong>Open-water season starts in May</strong>
-        <span>Sponsor placement · 600 × 600</span>
-      </div>
-    </aside>
-  </div>
-</section>
-
-<!-- ═══ Race report ═══ -->
-<section class="band band--alt" id="race-report">
-  <div class="shell">
-    <div class="sec-head">
-      <div>
-        <span class="eyebrow">Editor's pick</span>
-        <h2 class="sec-head__title">The race report</h2>
-      </div>
-      <a class="sec-head__link" href="#">All race reports →</a>
-    </div>
-
-    <article class="pick">
-      <a class="pick__media" href="article.html">
-        <img src="https://images.unsplash.com/photo-1452626038306-9aae5e071dd3?w=800&amp;h=600&amp;fit=crop&amp;q=80" alt="Thousands of runners filling a tree-lined city avenue at the start of a marathon">
-        <span class="tag-on-img tag-on-img--accent">Race report</span>
-      </a>
-      <div>
-        <span class="eyebrow eyebrow--muted">Valencia · February 2026</span>
-        <h3 class="pick__title"><a href="article.html">Negative Split or Bust</a></h3>
-        <p class="pick__dek">I went through halfway 90 seconds slower than goal pace on purpose. Here's the second half — and the last 5 km where it nearly came apart.</p>
-        <dl class="pick__stats">
-          <div class="pick__stat"><dt>Distance</dt><dd>42.2 km</dd></div>
-          <div class="pick__stat"><dt>Finish</dt><dd>3:28:41</dd></div>
-          <div class="pick__stat"><dt>Avg pace</dt><dd>4:57 /km</dd></div>
-          <div class="pick__stat"><dt>Elevation</dt><dd>84 m</dd></div>
-        </dl>
-        <a class="btn btn--primary" href="article.html">Read the report</a>
-      </div>
-    </article>
-  </div>
-</section>
-
-<!-- ═══ Gear ═══ -->
-<section class="band band--grey" id="gear">
-  <div class="shell">
-    <div class="sec-head">
-      <div>
-        <span class="eyebrow">Tested, not sponsored</span>
-        <h2 class="sec-head__title">Gear we actually kept</h2>
-        <p class="sec-head__sub">Every score comes after at least 200 km. We buy what we review.</p>
-      </div>
-      <a class="sec-head__link" href="#">All reviews →</a>
-    </div>
-
-    <div class="rail">
-      <a class="gear" href="article.html">
-        <span class="gear__media"><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&amp;h=333&amp;fit=crop&amp;q=75" alt="Red running shoe on a red background"></span>
-        <span class="eyebrow eyebrow--bare eyebrow--muted">Road shoe</span>
-        <span class="gear__name">Velo Flux 4 — daily trainer</span>
-        <span class="gear__meta"><span class="gear__score">8.7 / 10</span><span class="gear__price">£135</span></span>
-      </a>
-      <a class="gear" href="article.html">
-        <span class="gear__media"><img src="https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=500&amp;h=333&amp;fit=crop&amp;q=75" alt="Silver road bicycle against a white wall"></span>
-        <span class="eyebrow eyebrow--bare eyebrow--muted">Endurance bike</span>
-        <span class="gear__name">Northline AR2 alloy build</span>
-        <span class="gear__meta"><span class="gear__score">9.1 / 10</span><span class="gear__price">£1,899</span></span>
-      </a>
-      <a class="gear" href="article.html">
-        <span class="gear__media"><img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=500&amp;h=333&amp;fit=crop&amp;q=75" alt="Open sea water with a breaking wave at dusk"></span>
-        <span class="eyebrow eyebrow--bare eyebrow--muted">Open water</span>
-        <span class="gear__name">Tideline 3:2 wetsuit</span>
-        <span class="gear__meta"><span class="gear__score">8.4 / 10</span><span class="gear__price">£240</span></span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ Newsletter ═══ -->
-<section class="shell band" id="subscribe">
-  <div class="subscribe">
-    <div class="subscribe__collage" aria-hidden="true">
-      <img src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=300&amp;h=300&amp;fit=crop&amp;q=60" alt="">
-      <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?w=300&amp;h=300&amp;fit=crop&amp;q=60" alt="">
-      <img src="https://images.unsplash.com/photo-1530549387789-4c1017266635?w=300&amp;h=300&amp;fit=crop&amp;q=60" alt="">
-      <img src="https://images.unsplash.com/photo-1486218119243-13883505764c?w=300&amp;h=300&amp;fit=crop&amp;q=60" alt="">
-      <img src="https://images.unsplash.com/photo-1541625602330-2277a4c46182?w=300&amp;h=300&amp;fit=crop&amp;q=60" alt="">
-      <img src="https://images.unsplash.com/photo-1519315901367-f34ff9154487?w=300&amp;h=300&amp;fit=crop&amp;q=60" alt="">
-    </div>
-    <div class="subscribe__grid">
-      <div>
-        <span class="eyebrow eyebrow--muted">Be the first to know</span>
-        <h2>One honest email every Sunday morning.</h2>
-        <p>The week's training, what broke, what helped, and one route worth driving to. No affiliate spam — ever.</p>
-      </div>
-      <form class="subscribe__form" onsubmit="return false">
-        <div class="subscribe__row">
-          <label class="sr-only" for="nl-email">Email address</label>
-          <input id="nl-email" type="email" placeholder="Your email address" autocomplete="email">
-          <button class="btn btn--flame" type="submit">Subscribe</button>
-        </div>
-        <span class="subscribe__fine">Free forever. Unsubscribe in one click.</span>
-        <div class="subscribe__proof">
-          <span class="subscribe__faces">
-            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=60&amp;h=60&amp;fit=crop" alt="">
-            <img src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=60&amp;h=60&amp;fit=crop" alt="">
-            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=60&amp;h=60&amp;fit=crop" alt="">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&amp;h=60&amp;fit=crop" alt="">
-          </span>
-          Joined by 12,400 runners, riders and swimmers
-        </div>
+        <p class="form-message" data-form-message aria-live="polite"></p>
       </form>
     </div>
-  </div>
-</section>
+  </section>
 </main>
 
-<script src="assets/js/site-navigation.js" defer></script>
-<script src="assets/js/home-carousel.js" defer></script>
-
-<!-- ═══ Footer ═══ -->
 <footer class="site-foot">
   <div class="shell">
     <div class="foot-top">
-      <a class="brand" href="index.html">
-        <span class="brand__mark">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#d7fd8c" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="6" cy="18" r="3.2"/><circle cx="18" cy="18" r="3.2"/>
-            <path d="M6 18 10.5 8h4"/><path d="M14 8l4 10"/><path d="M9 8h5"/>
-          </svg>
-        </span>
-        <span class="brand__word">Cad<em>ence</em></span>
-      </a>
-      <div class="socials">
-        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.3-1.5 1.6-1.5h1.6V3.6c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.5-4 4.1v2.3H7.6V13h2.7v8h3.2z"/></svg></a>
-        <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 3h3.2l-7 8 7.3 10h-6l-4.6-6.4L5 21H1.8l7.4-8.4L2.2 3h6l4.3 6 5-6zm-1.1 16h1.8L7.6 4.8H5.7l10.7 14.2z"/></svg></a>
-        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r="1.2" fill="currentColor" stroke="none"/></svg></a>
-        <a href="#" aria-label="Threads"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.2 21c-2.8 0-5-.9-6.5-2.7C4.4 16.7 3.7 14.6 3.7 12s.7-4.7 2-6.3C7.2 3.9 9.4 3 12.2 3c2 0 3.7.5 5 1.4 1.2.9 2 2.1 2.4 3.6l-2 .6c-.6-2.2-2.3-3.5-5.4-3.5-2.1 0-3.7.7-4.8 2C6.4 8.4 5.9 10 5.9 12s.5 3.6 1.5 4.9c1.1 1.3 2.7 2 4.8 2 1.9 0 3.3-.4 4.2-1.3.9-.8 1.3-1.8 1.2-2.9-.1-1.3-.9-2.3-2.3-2.9-.2 1.4-.7 2.4-1.5 3.1-.8.7-1.8 1-3 .9-1.2-.1-2.1-.5-2.7-1.2-.6-.7-.9-1.5-.8-2.5.1-1 .6-1.8 1.4-2.3.9-.6 2-.8 3.4-.7.5 0 1 .1 1.5.2 0-.6-.2-1.1-.5-1.4-.4-.4-.9-.6-1.7-.6-1.1 0-1.9.4-2.4 1.3l-1.7-1c.9-1.5 2.3-2.2 4.1-2.2 1.3 0 2.4.4 3.1 1.2.7.7 1.1 1.8 1.1 3.1v.4c2.3.8 3.7 2.4 3.9 4.6.1 1.7-.5 3.2-1.9 4.4-1.3 1.1-3.2 1.7-5.4 1.7zm-.6-8.7c-1.6 0-2.4.5-2.5 1.4 0 .4.1.7.4 1 .3.3.8.5 1.4.5.7 0 1.2-.2 1.6-.7.4-.5.7-1.2.8-2.1-.6-.1-1.1-.1-1.7-.1z"/></svg></a>
-        <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 3h-2.8v12.1a2.5 2.5 0 11-2.5-2.5c.2 0 .5 0 .7.1V9.8a5.5 5.5 0 102.6 4.7V9.2a6.3 6.3 0 003.7 1.2V7.6a3.6 3.6 0 01-1.7-.5 3.7 3.7 0 01-1.6-2.6c0-.5 0-1 0-1.5z"/></svg></a>
-        <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.6 7.2s-.2-1.4-.8-2c-.8-.8-1.7-.8-2.1-.9C16.9 4.1 12 4.1 12 4.1s-4.9 0-6.7.2c-.4 0-1.3.1-2.1.9-.6.6-.8 2-.8 2S2.2 8.8 2.2 10.5v1.6c0 1.6.2 3.3.2 3.3s.2 1.4.8 2c.8.8 1.8.8 2.2.9 1.8.2 6.6.2 6.6.2s4.9 0 6.7-.2c.4 0 1.3-.1 2.1-.9.6-.6.8-2 .8-2s.2-1.6.2-3.3v-1.6c0-1.7-.2-3.3-.2-3.3zM10.2 14.2V8.6l5.2 2.8-5.2 2.8z"/></svg></a>
-      </div>
+      <a class="brand" href="index.html" aria-label="Bateson home"><span class="brand__word">BATESON</span></a>
+      <nav class="socials" aria-label="Social media">
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M14 8h3V4h-3c-2.8 0-5 2.2-5 5v2H6v4h3v5h4v-5h3l1-4h-4V9c0-.6.4-1 1-1z"/></svg></a>
+        <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M18.9 3H22l-6.8 7.8L23.2 21h-6.3l-4.9-6.4L6.4 21H3.3l7.2-8.3L2.8 3h6.4l4.4 5.8L18.9 3zm-1.1 16h1.7L8.4 4.9H6.6L17.8 19z"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="#" aria-label="Threads"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M18.3 10.1c-.4-3-2.6-4.8-5.9-4.8-3.7 0-6.2 2.2-6.2 6.7 0 4.3 2.4 6.7 6.3 6.7 3.6 0 5.7-1.7 5.7-4.4 0-2.6-2.1-4.2-5.4-4.2-2.1 0-3.2.8-3.2 2.1 0 1.1.9 1.8 2.3 1.8 1.8 0 2.8-1.1 2.8-3.2 0-2.9-1.7-4.8-4.4-4.8"/><path d="M13.8 12.1c2.9.2 5.2 1.2 6.3 3.2"/></svg></a>
+        <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M15 3h3c.2 1.8 1.1 3 3 3.5v3.1c-1.2 0-2.4-.4-3.4-1.1v6.1a5.4 5.4 0 1 1-5.4-5.4c.4 0 .8 0 1.2.1v3.2a2.4 2.4 0 1 0 1.6 2.3V3z"/></svg></a>
+        <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M21.6 7.2c-.2-1.1-1.1-2-2.2-2.2C17.7 4.7 12 4.7 12 4.7s-5.7 0-7.4.3c-1.1.2-2 1.1-2.2 2.2C2.1 8.9 2.1 12 2.1 12s0 3.1.3 4.8c.2 1.1 1.1 2 2.2 2.2 1.7.3 7.4.3 7.4.3s5.7 0 7.4-.3c1.1-.2 2-1.1 2.2-2.2.3-1.7.3-4.8.3-4.8s0-3.1-.3-4.8zM10 15.3V8.7l5.7 3.3-5.7 3.3z"/></svg></a>
+      </nav>
     </div>
 
     <div class="foot-grid">
       <div class="foot-col">
-        <h4>Categories</h4>
+        <h3>Running</h3>
         <ul>
-          <li><a href="#running">Running</a></li>
-          <li><a href="#cycling">Cycling</a></li>
-          <li><a href="#swimming">Swimming</a></li>
-          <li><a href="#race-report">Race reports</a></li>
-          <li><a href="#gear">Gear reviews</a></li>
+          <li><a href="#running">Running 1</a></li>
+          <li><a href="#running">Running 2</a></li>
+          <li><a href="#running">Running 3</a></li>
+          <li><a href="#running">Running 4</a></li>
+          <li><a href="#running">Running 5</a></li>
         </ul>
       </div>
       <div class="foot-col">
-        <h4>Pages</h4>
+        <h3>Cycling</h3>
         <ul>
-          <li><a href="#">Our story</a></li>
-          <li><a href="#">How we test</a></li>
-          <li><a href="#">Authors</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="style-guide.html">Style guide</a></li>
+          <li><a href="#cycling">Cycling 1</a></li>
+          <li><a href="#cycling">Cycling 2</a></li>
+          <li><a href="#cycling">Cycling 3</a></li>
+          <li><a href="#cycling">Cycling 4</a></li>
+          <li><a href="#cycling">Cycling 5</a></li>
         </ul>
       </div>
       <div class="foot-col">
-        <h4>Terms of use</h4>
+        <h3>Swimming</h3>
         <ul>
-          <li><a href="#">Privacy policy</a></li>
-          <li><a href="#">Terms of service</a></li>
-          <li><a href="#">Advertise with us</a></li>
-          <li><a href="#">RSS</a></li>
+          <li><a href="#swimming">Swimming 1</a></li>
+          <li><a href="#swimming">Swimming 2</a></li>
+          <li><a href="#swimming">Swimming 3</a></li>
+          <li><a href="#swimming">Swimming 4</a></li>
+          <li><a href="#swimming">Swimming 5</a></li>
         </ul>
       </div>
       <div class="foot-col">
-        <h4>Subscribe to our newsletter</h4>
-        <p class="foot-note">Be the first to know about new posts and race reports.</p>
-        <form class="foot-form" onsubmit="return false">
-          <label class="sr-only" for="foot-email">Email address</label>
-          <input id="foot-email" type="email" placeholder="you@example.com" autocomplete="email">
-          <button class="btn btn--flame btn--sm" type="submit">Subscribe</button>
+        <h3>Subscribe to our newsletter</h3>
+        <p class="foot-note">New stories, race reports and practical training notes.</p>
+        <form class="foot-form" data-newsletter-form novalidate>
+          <label class="sr-only" for="footer-email">Email address</label>
+          <input id="footer-email" name="email" type="email" autocomplete="email" placeholder="Email address" required>
+          <button class="btn btn--small" type="submit">Subscribe</button>
         </form>
+        <p class="form-message" data-form-message aria-live="polite"></p>
       </div>
     </div>
 
-    <div class="foot-base">
-      <span>© 2026 Cadence. Published with Ghost.</span>
-    </div>
+    <div class="foot-base">© 2026 Bateson. All rights reserved.</div>
   </div>
 </footer>
 
+<script src="assets/js/home-carousel.js" defer></script>
+<script src="assets/js/newsletter.js" defer></script>
 </body>
 </html>

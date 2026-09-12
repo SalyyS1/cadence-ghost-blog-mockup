@@ -1,96 +1,43 @@
-/* ==========================================================================
-   Design tokens — Cadence (running / cycling / swimming journal)
-   Revision 2: client feedback round 1.
-   - Single typeface (Inter) across the whole site, per client note on the
-     Luno theme font.
-   - Warm pink surface retired in favour of the light grey used everywhere
-     else, so the gear rail matches the blog sections.
-   - Flame accent added for the newsletter CTA (Rune-theme reference).
-   ========================================================================== */
-
 :root {
-  /* --- Brand: cobalt (primary) --- */
-  --cobalt-50:  #e6eeff;
-  --cobalt-100: #c2d6ff;
-  --cobalt-300: #6699f5;
-  --cobalt-500: #0053c7;
-  --cobalt-600: #004ab3;
-  --cobalt-800: #003380;
-  --cobalt-950: #001a4d;
+  /* Bateson uses a restrained, print-like palette from the supplied wireframe. */
+  --blue-700: #034fc5;
+  --blue-800: #003fa5;
+  --blue-100: #d9e7ff;
+  --ink: #111111;
+  --text: #202020;
+  --muted: #606060;
+  --surface: #ffffff;
+  --surface-soft: #f6f6f6;
+  --surface-mid: #e6e6e6;
+  --line: #e4e4e4;
 
-  /* --- Brand: zest (lime accent — highlights, CTAs) --- */
-  --zest-50:  #f7ffe9;
-  --zest-100: #eeffcd;
-  --zest-300: #dcff8e;
-  --zest-500: #d7fd8c;
-  --zest-700: #96c14d;
-  --zest-900: #4e6e27;
-
-  /* --- Brand: aqua (secondary accent — data, cycling, swimming) --- */
-  --aqua-100: #acf2f8;
-  --aqua-500: #00cfda;
-  --aqua-800: #176c8f;
-
-  /* --- Flame (newsletter CTA, Rune reference) --- */
-  --flame-500: #e2402f;
-  --flame-600: #c4301f;
-
-  /* --- Neutrals (cool navy-tinted) --- */
-  --neutral-0:   #ffffff;
-  --neutral-50:  #f6f9fd;
-  --neutral-100: #edf3fb;
-  --neutral-200: #e6eef9;
-  --neutral-300: #dce6f5;
-  --neutral-400: #b2c2d9;
-  --neutral-500: #60769a;
-  --neutral-700: #38567d;
-  --neutral-900: #112b51;
-  --neutral-950: #00193c;
-
-  /* --- Semantic roles --- */
-  --ink:          var(--neutral-950);
-  --ink-soft:     var(--neutral-900);
-  --text:         #22385c;
-  --text-muted:   var(--neutral-500);
-  --line:         var(--neutral-300);
-  --line-strong:  var(--neutral-400);
-  --surface:      var(--neutral-0);
-  --surface-alt:  var(--neutral-50);
-  --surface-grey: var(--neutral-100);
-  --brand:        var(--cobalt-500);
-  --brand-deep:   var(--cobalt-950);
-  --accent:       var(--zest-500);
-
-  /* --- Type: one family, site-wide --- */
-  --font-sans: "Inter", -apple-system, "Segoe UI", Roboto, sans-serif;
+  --brand: var(--blue-700);
+  --brand-dark: var(--blue-800);
+  --font-sans: "Archivo", "Arial", sans-serif;
   --font-display: var(--font-sans);
 
-  --step--1: 0.8125rem;   /* 13px  meta, chips */
-  --step-0:  1rem;        /* 16px  body */
-  --step-1:  1.125rem;    /* 18px  article body */
-  --step-2:  1.25rem;     /* 20px  card title */
-  --step-3:  1.75rem;     /* 28px  section title */
-  --step-4:  2.25rem;     /* 36px  feature title */
-  --step-5:  3.25rem;     /* 52px  hero title */
-  --step-6:  4.25rem;     /* 68px  display */
+  --text-xs: 0.6875rem;
+  --text-sm: 0.8125rem;
+  --text-md: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 2rem;
+  --text-hero: clamp(2.25rem, 4.2vw, 4rem);
 
-  /* --- Space / shape --- */
-  --gap-xs: 0.5rem;
-  --gap-sm: 0.875rem;
-  --gap:    1.5rem;
-  --gap-lg: 2.5rem;
-  --gap-xl: 4rem;
-  --band:   5rem;         /* vertical rhythm between sections */
-  --shell:  1240px;       /* max content width */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --shell: 1400px;
 
-  --r-sm: 6px;
-  --r:    10px;
-  --r-lg: 14px;
-  --r-xl: 20px;
-  --r-pill: 999px;
-
-  --shadow-card: 0 1px 2px rgba(0, 25, 60, .04), 0 8px 24px rgba(0, 25, 60, .06);
-  --shadow-lift: 0 2px 4px rgba(0, 25, 60, .06), 0 18px 40px rgba(0, 25, 60, .12);
-
-  --ease: cubic-bezier(.2, .8, .2, 1);
+  --radius-sm: 0.75rem;
+  --radius-card: 1.375rem;
+  --radius-pill: 999px;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 160ms;
+  --duration-base: 260ms;
 }
